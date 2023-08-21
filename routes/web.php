@@ -22,7 +22,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/menu', [HomeController::class, 'menu'])->name('menu');
+Route::get('/shop', [HomeController::class, 'shop'])->name('shop');
 Route::get('/food/{data}', [FoodController::class, 'show'])->name('details');
+
 Route::resource('/product', FoodController::class);
 
 Auth::routes();

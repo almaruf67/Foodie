@@ -39,10 +39,21 @@ class HomeController extends Controller
     {
         return view('Home.contact');
     }
+    public function menu()
+    {
+        return view('Home.menu');
+    }
 
     public function about()
     {
         return view('Home.about');
+    }
+    public function shop()
+    {
+        $items = Product::orderBy('id', 'desc')->paginate(3);
+       
+        // dd( $items->toarray());
+        return view('Home.shop',compact('items'));
     }
     /**
      * Show the application dashboard.

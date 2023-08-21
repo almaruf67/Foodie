@@ -130,21 +130,11 @@
                       
                     </li>
                     <li class="navbar-dropdown">
-                      <a href="#">Menus</a>
-                      <div class="dropdown">
-                        <a href="menu-1.html">Menu 1</a>
-                        <a href="menu-2.html">Menu 2</a>
-                        <a href="menu-3.html">Menu 3</a>
-                      </div>
+                      <a href="{{ route("menu") }}">Menu</a>
+                      
                     </li>
                     <li class="navbar-dropdown">
-                      <a href="#">Shop</a>
-                      <div class="dropdown">
-                        <a href="shop.html">our product</a>
-                        <a href="product-details.html">product details</a>
-                        <a href="shop-cart.html">shop cart</a>
-                        <a href="cart-checkout.html">cart checkout</a>
-                      </div>
+                      <a href="{{ route("shop") }}">Shop</a>
                     </li>
                     <li class="navbar-dropdown">
                       <a href="#">News</a>
@@ -248,12 +238,8 @@
               
            
           </li>
-          <li class="menu-item-has-children"><a href="JavaScript:void(0)">menus</a>
-            <ul class="sub-menu">
-              <li><a href="menu-1.html">menu 1</a></li>
-              <li><a href="menu-2.html">menu 2</a></li>
-              <li><a href="menu-3.html">menu 3</a></li>
-            </ul>
+          <li class="menu-item-has-children"><a href="{{ route('menu') }}">menu</a>
+            
           </li>
 
           
