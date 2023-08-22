@@ -91,7 +91,7 @@
             <img alt="Pizza" src="https://via.placeholder.com/129x129">
         </div>
     </section>
-    <section class="gap">
+    {{-- <section class="gap">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6">
@@ -160,8 +160,8 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="section-discover-menu">
+    </section> --}}
+    <section class="section-discover-menu mt-3">
         <div class="container">
             <div class="heading-two">
                 <h2>Discover Menu</h2>
@@ -476,6 +476,54 @@
             </div>
         </div>
     </section>
+    <section class="gap section-featured" style="background-color: #f5f8fd;">
+        <div class="container">
+            <div class="heading-two">
+                <h2>Featured Dishes</h2>
+                <div class="line"></div>
+            </div>
+            <h2 class="mb-3">Laravel Add To Shopping Cart</h2>
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+            <div class="row dishes owl-carousel owl-theme">
+                @foreach ($items as $item)
+                    <div class="item col-xl-12">
+                        <div class="featured-dishes">
+                            <div class="featured-dishes-img">
+                              <a href="{{ route('details', $item->id) }}" @style('text-decoration:none')>
+                                <img alt="featured-dishes" src="{{ asset($item->Poster) }}" width="200px"
+                                    height="200px">
+                              </a>
+                            </div>
+                            <ul class="star">
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                                <li><i class="fa-solid fa-star"></i></li>
+                            </ul>
+                            <a href="{{ route('details', $item->id) }}" @style('text-decoration:none')>
+                                <h5>{{ $item->Title }}</h5>
+                            </a>
+                            <p><span>৳</span>{{ $item->Price }}</p>
+                            <a href="{{ route('addcart', $item->id) }}">
+                                <i><svg enable-background="new 0 0 512 512" viewBox="0 0 512 512"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g>
+                                            <path
+                                                d="m452 120h-60.946c-7.945-67.478-65.477-120-135.054-120s-127.109 52.522-135.054 120h-60.946c-11.046 0-20 8.954-20 20v352c0 11.046 8.954 20 20 20h392c11.046 0 20-8.954 20-20v-352c0-11.046-8.954-20-20-20zm-196-80c47.484 0 87.019 34.655 94.659 80h-189.318c7.64-45.345 47.175-80 94.659-80zm176 432h-352v-312h40v60c0 11.046 8.954 20 20 20s20-8.954 20-20v-60h192v60c0 11.046 8.954 20 20 20s20-8.954 20-20v-60h40z">
+                                            </path>
+                                        </g>
+                                    </svg></i></a>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
     <section class="gap">
         <div class="container">
             <div class="row">
@@ -485,7 +533,7 @@
                         <p>canonical classics to obscure<br> tiki drinks</p>
                         <div class="bbr-price">
                             <div>
-                                <h3>$120</h3>
+                                <h3>৳120</h3>
                                 <span>per person</span>
                             </div>
                         </div>
@@ -497,7 +545,7 @@
                         <p>canonical classics to obscure <br> tiki drinks</p>
                         <div class="bbr-price">
                             <div>
-                                <h3>$120</h3>
+                                <h3>৳120</h3>
                                 <span>per person</span>
                             </div>
                         </div>
@@ -550,54 +598,7 @@
             </div>
         </div>
     </section>
-    <section class="gap section-featured" style="background-color: #f5f8fd;">
-        <div class="container">
-            <div class="heading-two">
-                <h2>Featured Dishes</h2>
-                <div class="line"></div>
-            </div>
-            <h2 class="mb-3">Laravel Add To Shopping Cart</h2>
-            @if (session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
-            <div class="row dishes owl-carousel owl-theme">
-                @foreach ($items as $item)
-                    <div class="item col-xl-12">
-                        <div class="featured-dishes">
-                            <div class="featured-dishes-img">
-                              <a href="{{ route('details', $item->id) }}" @style('text-decoration:none')>
-                                <img alt="featured-dishes" src="{{ asset($item->Poster) }}" width="200px"
-                                    height="200px">
-                              </a>
-                            </div>
-                            <ul class="star">
-                                <li><i class="fa-solid fa-star"></i></li>
-                                <li><i class="fa-solid fa-star"></i></li>
-                                <li><i class="fa-solid fa-star"></i></li>
-                                <li><i class="fa-solid fa-star"></i></li>
-                                <li><i class="fa-solid fa-star"></i></li>
-                            </ul>
-                            <a href="{{ route('details', $item->id) }}" @style('text-decoration:none')>
-                                <h5>{{ $item->Title }}</h5>
-                            </a>
-                            <p><span>৳</span>{{ $item->Price }}</p>
-                            <a href="{{ route('addcart', $item->id) }}">
-                                <i><svg enable-background="new 0 0 512 512" viewBox="0 0 512 512"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g>
-                                            <path
-                                                d="m452 120h-60.946c-7.945-67.478-65.477-120-135.054-120s-127.109 52.522-135.054 120h-60.946c-11.046 0-20 8.954-20 20v352c0 11.046 8.954 20 20 20h392c11.046 0 20-8.954 20-20v-352c0-11.046-8.954-20-20-20zm-196-80c47.484 0 87.019 34.655 94.659 80h-189.318c7.64-45.345 47.175-80 94.659-80zm176 432h-352v-312h40v60c0 11.046 8.954 20 20 20s20-8.954 20-20v-60h192v60c0 11.046 8.954 20 20 20s20-8.954 20-20v-60h40z">
-                                            </path>
-                                        </g>
-                                    </svg></i></a>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
+    
     <section class="gap">
         <div class="container">
             <div class="row">
@@ -679,74 +680,7 @@
             </div>
         </div>
     </section>
-    <section class="gap no-top">
-        <div class="container">
-            <div class="heading-two">
-                <h2>Meet Our Experts</h2>
-                <div class="line"></div>
-            </div>
-            <div class="row">
-                <div class="col-xl-4 col-lg-6">
-                    <div class="chef">
-                        <img alt="cook chef" src="https://via.placeholder.com/392x505">
-                        <div class="chef-text">
-                            <div>
-                                <span>Dessert specialist</span>
-                                <a href="chef-details.html">
-                                    <h3>Thomas Walim</h3>
-                                </a>
-                                <ul class="social-media">
-                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                </ul>
-                                <img alt="sine" src="assets/img/sine.png">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="chef">
-                        <img alt="cook chef" src="https://via.placeholder.com/392x505">
-                        <div class="chef-text">
-                            <div>
-                                <span>Chef Master</span>
-                                <a href="chef-details.html">
-                                    <h3>James Jhonson</h3>
-                                </a>
-                                <ul class="social-media">
-                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                </ul>
-                                <img alt="sine" src="assets/img/sine.png">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="chef mb-0">
-                        <img alt="cook chef" src="https://via.placeholder.com/392x505">
-                        <div class="chef-text">
-                            <div>
-                                <span>Dessert specialist</span>
-                                <a href="chef-details.html">
-                                    <h3>Room Minal</h3>
-                                </a>
-                                <ul class="social-media">
-                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                </ul>
-                                <img alt="sine" src="assets/img/sine.png">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="gap no-bottom app-foods" style="background-color :#f5f8fd;">
+    <section class="gap no-bottom app-foods mb-5" style="background-color :#f5f8fd;">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6">
@@ -794,44 +728,5 @@
             </div>
         </div>
     </section>
-    <section class="gap">
-        <div class="container">
-            <div class="heading-two">
-                <h2>Recent News</h2>
-                <div class="line"></div>
-            </div>
-            <div class="row">
-                <div class="col-xl-6">
-                    <div class="recent-news">
-                        <img alt="recent-news" src="https://via.placeholder.com/260x280">
-                        <div>
-                            <a href="#"><span>29 December, 2023</span></a>
-                            <a href="blog-details.html">
-                                <h3>Table restaurant located in on Bank Street</h3>
-                            </a>
-                            <div class="d-flex align-items-center"><img alt="img" class="me-3"
-                                    src="https://via.placeholder.com/55x55">
-                                <h6>by Thomas Walimes</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6">
-                    <div class="recent-news">
-                        <img alt="recent-news" src="https://via.placeholder.com/260x280">
-                        <div>
-                            <a href="#"><span>29 December, 2023</span></a>
-                            <a href="blog-details.html">
-                                <h3>Craig Davies appointed executive head chef of Burgh</h3>
-                            </a>
-                            <div class="d-flex align-items-center"><img alt="img" class="me-3"
-                                    src="https://via.placeholder.com/55x55">
-                                <h6>by Thomas Walimes</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 @endsection

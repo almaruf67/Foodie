@@ -26,11 +26,11 @@ class HomeController extends Controller
     public function index()
     {
         $items = Product::orderBy('id', 'desc')->get();
-        $Burgers = Product::orderBy('id', 'desc')->Where('Category','Burger')->get();
-        $Desserts = Product::orderBy('id', 'desc')->Where('Category','Dessert')->get();
-        $Steaks = Product::orderBy('id', 'desc')->Where('Category','Steak')->get();
-        $Coffees = Product::orderBy('id', 'desc')->Where('Category','Coffee')->get();
-        $Pizzas = Product::orderBy('id', 'desc')->Where('Category','Pizza')->get();
+        $Burgers = Product::orderBy('id', 'desc')->Where('Category','Burger')->take(4)->get();;
+        $Desserts = Product::orderBy('id', 'desc')->Where('Category','Dessert')->take(4)->get();
+        $Steaks = Product::orderBy('id', 'desc')->Where('Category','Steak')->take(4)->get();
+        $Coffees = Product::orderBy('id', 'desc')->Where('Category','Coffee')->take(4)->get();
+        $Pizzas = Product::orderBy('id', 'desc')->Where('Category','Pizza')->take(4)->get();
         // dd(session()->get('cart'));
         return view('Home.home',compact('items','Burgers','Pizzas','Desserts','Steaks','Coffees'));
     }

@@ -136,21 +136,10 @@
                     <li class="navbar-dropdown">
                       <a href="{{ route("shop") }}">Shop</a>
                     </li>
+                    
                     <li class="navbar-dropdown">
-                      <a href="#">News</a>
-                      <div class="dropdown">
-                        <a href="our-blog.html">our blog</a>
-                        <a href="blog-details.html">blog details</a>
-                      </div>
-                    </li>
-                    <li class="navbar-dropdown">
-                      <a href="#">Pages</a>
-                      <div class="dropdown">
-                        <a href="{{ route('about') }}">about</a>
-                        <a href="our-services.html">our services</a>
-                        <a href="chef-details.html">chef details</a>
-                        
-                      </div>
+                      <a href="{{ route('about') }}">About</a>
+                      
                     </li>
                     <li class="navbar-dropdown">
                       <a href="{{ route('contact') }}">Contact</a>
@@ -253,24 +242,10 @@
           </ul>
 
           </li>
-          <li class="menu-item-has-children"><a href="JavaScript:void(0)">News</a>
+          
+          <li class="menu-item-has-children"><a href="{{ route('about') }}">about</a>
 
-          <ul class="sub-menu">
-
-           <li><a href="our-blog.html">our blog</a></li>
-                    <li><a href="blog-details.html">blog details</a></li>
-          </ul>
-
-          </li>
-          <li class="menu-item-has-children"><a href="JavaScript:void(0)">Pages</a>
-
-          <ul class="sub-menu">
-
-            <li><a href="{{ route('about') }}">about</a></li>
-            <li><a href="our-services.html">our services</a></li>
-            <li><a href="chef-details.html">chef details</a></li>
-            
-          </ul>
+         
 
           </li>
 

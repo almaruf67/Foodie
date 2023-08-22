@@ -68,8 +68,7 @@
                </h3>
                <form class="variations_form">
                   <div class="deal-week mb-4 d-flex align-items-center"><h2 class="m-0"><span>$</span> {{ $product->Price }}</h2></div>
-                  <h5>What’s Included</h5>
-                  <p> {{ $product->Description }}</p>
+                 
                   <div class="d-flex align-items-center mt-4">
                      <a href="{{ route('addcart', $product->id) }}" class="button">Add to Cart</a>
                   </div>
@@ -94,35 +93,9 @@
    <div class="container">
       <h2 class="pb-3">Description</h2>
       <p>
-      Nisl quam nestibulum ac quam nec odio elementu sceisu aucan ligula. Orci varius natoque pena tibus et magnis dis urient monte ulus mus nellent
-      esque habitanum ac quam nec odio rbine. Nisl quam nestibulum ac quam nec odio elementu sceisu aucan ligula. toque pena tibus et magnis dis u
-      rient monte nascete ridic ulus mus nellentesque habitanum ac quam nec odio rbine. Nisl quamu quam nec odio elementu sceisu aucan ligula. Orc
-      i varius natoque pena tibus et magnis dis urient monte nascete ridic ulus mus a habitanum ac quam nec odio rbine. Nisl quam nestibulum ac qua
-      m nec odio elementu sceisu aucan ligula. Orci varius natoque pe magnis dis urient monte nascete ridiculus mus nellentesque habitanum ac quam 
-      nec odio rbine. Nisl quam nestibulum ac quam ntoque pena tibus et magnis dis urient monte nascete ridic ulus mus nellentesque habitanum ac 
-      quam nec odio rbine. Nisl quam a quam nec odio elementu sceisu aucan ligula. Orci varius natoque pena tibus et magnis dis urient monte nascet
-      e ridic ulus mus n habitanum ac quam nec odio rbine.<br><br>
-
-      Nisl quam nestibulum ac quam nec odio elementu sceisu aucan ligula. Orci varius natoque pena tibus et magnis dis urient monte quam nec odio e
-      lementu sceisu aucan ligula. Orci varius natoque pena tibus et magnis dis urient monte nascete ridic.</p>
-      <div class="row">
-         <div class="col-lg-4 col-sm-6">
-            <div class="product-img">
-               <img alt="product-img" src="https://via.placeholder.com/410x288"> 
-            </div>
-         </div>
-         <div class="col-lg-4 col-sm-6">
-            <div class="product-img">
-               <img alt="product-img" src="https://via.placeholder.com/410x288"> 
-            </div>
-         </div>
-         <div class="col-lg-4 col-sm-6">
-            <div class="product-img">
-               <img alt="product-img" src="https://via.placeholder.com/410x288"> 
-            </div>
-         </div>
-
-      </div>
+         {{ $product->Description }}
+      </p>
+      
    </div>
 </div>
 <section>
