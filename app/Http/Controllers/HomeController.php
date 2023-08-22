@@ -31,7 +31,7 @@ class HomeController extends Controller
         $Steaks = Product::orderBy('id', 'desc')->Where('Category','Steak')->get();
         $Coffees = Product::orderBy('id', 'desc')->Where('Category','Coffee')->get();
         $Pizzas = Product::orderBy('id', 'desc')->Where('Category','Pizza')->get();
-        // dd($Burger);
+        // dd(session()->get('cart'));
         return view('Home.home',compact('items','Burgers','Pizzas','Desserts','Steaks','Coffees'));
     }
 

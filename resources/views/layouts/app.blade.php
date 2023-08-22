@@ -186,7 +186,7 @@
 
                           <h3 class="font-semi-bold">{{ $details['title'] }}</h3>
                           @php $sum =$details['quantity'] * $details['price']  @endphp
-                          <p class="theme-clr font-semi-bold">{{ $details['quantity'] }} x {{ $details['price']}} $ ={{ $sum }}$</p>
+                          <p class="theme-clr font-semi-bold">{{ $details['quantity'] }} x {{ $details['price']}} ৳ ={{ $sum }}৳</p>
                           @php $total +=$sum  @endphp
                         </div>
                         <div rowdel="{{ $id }}" class="actions">
@@ -205,7 +205,7 @@
                         @if(session('total'))
                         <span class="font-semi-bold">Total:</span>
                         
-                        <span class="font-semi-bold">{{ session()->get('total'); }}$</span>
+                        <span class="font-semi-bold">{{ session()->get('total'); }}৳</span>
                         @endif
                       </div>
 

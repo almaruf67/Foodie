@@ -356,7 +356,7 @@
                                                 <p>{{ $Dessert->Description }}</p>
                                              </a>
                                             </div>
-                                            <span>{{ $Dessert->Price }}</span>
+                                            <span>{{ $Dessert->Price }}৳</span>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -383,7 +383,7 @@
                                                 <p>{{ $Steak->Description }}</p>
                                              </a>
                                             </div>
-                                            <span>{{ $Steak->Price }}</span>
+                                            <span>{{ $Steak->Price }}৳</span>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -410,7 +410,7 @@
                                                 <p>{{ $Coffee->Description }}</p>
                                              </a>
                                             </div>
-                                            <span>{{ $Coffee->Price }}</span>
+                                            <span>{{ $Coffee->Price }}৳</span>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -437,7 +437,7 @@
                                                 <p>{{ $Pizza->Description }}</p>
                                              </a>
                                             </div>
-                                            <span>{{ $Pizza->Price }}$</span>
+                                            <span>{{ $Pizza->Price }}৳</span>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -465,7 +465,7 @@
                                                 <p>{{ $Burger->Description }}</p>
                                              </a>
                                             </div>
-                                            <span>{{ $Burger->Price }}</span>
+                                            <span>{{ $Burger->Price }}৳</span>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -582,7 +582,7 @@
                             <a href="{{ route('details', $item->id) }}" @style('text-decoration:none')>
                                 <h5>{{ $item->Title }}</h5>
                             </a>
-                            <p><span>$</span>{{ $item->Price }}</p>
+                            <p><span>৳</span>{{ $item->Price }}</p>
                             <a href="{{ route('addcart', $item->id) }}">
                                 <i><svg enable-background="new 0 0 512 512" viewBox="0 0 512 512"
                                         xmlns="http://www.w3.org/2000/svg">

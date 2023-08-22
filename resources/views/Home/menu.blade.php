@@ -45,21 +45,21 @@
                      <li>
                         <div class="delicious">
                            <h6>Dasi Breakfast</h6>
-                           <span>$12.00</span>
+                           <span>৳12.00</span>
                         </div>
                         <p>Sausage, three rashers of streaky bacon, two fried eggs</p>
                      </li>
                      <li>
                         <div class="delicious">
                            <h6>Three Meat Skillet</h6>
-                           <span>$9.00</span>
+                           <span>৳9.00</span>
                         </div>
                         <p>Hickory House bacon, sausage, ham, cheddar cheese</p>
                      </li>
                      <li>
                         <div class="delicious">
                            <h6>Breakfast Bowl</h6>
-                           <span>$14.00</span>
+                           <span>৳14.00</span>
                         </div>
                         <p class="pb-0">Hickory House bacon, sausage, ham, cheddar cheese</p>
                      </li>
@@ -74,28 +74,28 @@
                      <li>
                         <div class="delicious">
                            <h6>Potato Skins</h6>
-                           <span>$9.00</span>
+                           <span>৳9.00</span>
                         </div>
                         <p>Sour cream, bacon, cheddar cheese, olive oil</p>
                      </li>
                      <li>
                         <div class="delicious">
                            <h6>Apple Pie Pancakes</h6>
-                           <span>$11.00</span>
+                           <span>৳11.00</span>
                         </div>
                         <p>Spices. Slather with butter and dunk them in some homemade vanilla</p>
                      </li>
                      <li>
                         <div class="delicious">
                            <h6>Sweet Cream Waffle</h6>
-                           <span>$18.00</span>
+                           <span>৳18.00</span>
                         </div>
                         <p>Refrigerated. 2 Eggs ; Baking &amp; Spices. 2 cups </p>
                      </li>
                      <li>
                         <div class="delicious">
                            <h6>Caesar Wrap</h6>
-                           <span>$12.00</span>
+                           <span>৳12.00</span>
                         </div>
                         <p class="pb-0">This classic handheld with tender chicken, Parmesan cheese and chopped</p>
                      </li>
@@ -110,21 +110,21 @@
                      <li>
                         <div class="delicious">
                            <h6>Beef Lasagna Food</h6>
-                           <span>$9.00</span>
+                           <span>৳9.00</span>
                         </div>
                         <p>2 olive oil, plus a little for the dish; 750g lean beef mince; 90g pack prosciutto</p>
                      </li>
                      <li>
                         <div class="delicious">
                            <h6>Chicken Mayo Roll</h6>
-                           <span>$12.00</span>
+                           <span>৳12.00</span>
                         </div>
                         <p>Cook the chicken in a grill pan, once the chicken is cooked place chicken</p>
                      </li>
                      <li>
                         <div class="delicious">
                            <h6>Mutton Curry</h6>
-                           <span>$10.00</span>
+                           <span>৳10.00</span>
                         </div>
                         <p class="pb-0">Sausage, three rashers of streaky bacon, two fried eggs</p>
                      </li>

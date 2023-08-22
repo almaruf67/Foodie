@@ -71,7 +71,6 @@
                   <h5>What’s Included</h5>
                   <p> {{ $product->Description }}</p>
                   <div class="d-flex align-items-center mt-4">
-                     <input type="number" class="input-text me-4" step="1" min="1" name="quantity" value="1">
                      <a href="{{ route('addcart', $product->id) }}" class="button">Add to Cart</a>
                   </div>
                   <ul class="product_meta">
@@ -215,4 +214,5 @@
             </div>
    </div>
 </section>
+
 @endsection
