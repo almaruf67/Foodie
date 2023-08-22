@@ -33,7 +33,7 @@ Auth::routes();
 Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/checkout', [CartController::class, 'checkout'])->name('checkout');
     Route::get('/book/{id}', [CartController::class, 'addtoCart'])->name('addcart');
-    Route::patch('/update-shopping-cart', [CartController::class, 'updateCart'])->name('updateCart');
+    Route::patch('/update-shopping-cart', [CartController::class, 'update'])->name('update_cart');
     Route::delete('/delete-cart-product', [CartController::class, 'deleteProduct'])->name('delete.cart.product');
     Route::get('/cart', [CartController::class, 'index'])->name('viewcart');
     

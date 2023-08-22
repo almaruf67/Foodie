@@ -93,15 +93,18 @@ class CartController extends Controller
         //
     }
 
-    public function updateCart(Request $request)
+    public function update(Request $request)
     {
-        // dd($request);
+        $total = $request->session()->pull('total');
+
         if($request->id && $request->quantity){
             $cart = session()->get('cart');
+            $total-=$cart[$request->id]['quantity']*$cart[$request->id]['price'];
             $cart[$request->id]["quantity"] = $request->quantity;
-
+            $total+=$cart[$request->id]['quantity']*$cart[$request->id]['price'];
             session()->put('cart', $cart);
-            session()->flash('success', 'Product updated to cart.');
+            session()->put('total', $total);
+            session()->flash('success', 'Cart successfully updated!');
         }
     }
    
@@ -121,17 +124,6 @@ class CartController extends Controller
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         //

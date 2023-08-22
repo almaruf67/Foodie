@@ -59,8 +59,8 @@
                                                 <span>{{ $details['description'] }}</span>
                                             </div>
                                         </td>
-                                        <td class="product-quantity">
-                                            <input type="number" class="input-text" value="{{ $details['quantity'] }}" >
+                                        <td class="product-quantity" data-id="{{ $id }}">
+                                            <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity cart_update" min="1" />
                                         </td>
                                         @php $sum =$details['quantity'] * $details['price']  @endphp
                                         <td class="product-subtotal">
@@ -69,28 +69,30 @@
                                         </td>
                                         <td >
                                           <div rowdel="{{ $id }}" class="actions"><a class="btn btn-outline-danger btn-sm delete-product"><i class="fa-solid fa-trash"></i></a></div>
-                                          <div rowup="{{ $id }}" class="actions"><a class="btn btn-outline-danger btn-sm update-product mt-2"><i class="fa-sharp fa-solid fa-circle-check"></i></a></div>
+                                          {{-- <div rowup="{{ $id }}" class="actions"><a class="btn btn-outline-danger btn-sm update-product mt-2"><i class="fa-sharp fa-solid fa-circle-check"></i></a></div> --}}
                                           
                                        </td>
                                         
                                     </tr>
                                    
                                 @endforeach
-                            @endif
+                          
 
                         </tbody>
-                        {{-- <tfoot>
+                        <tfoot>
                             <tr class="coupon">
-                                <td colspan="4">
+                                <td colspan="2">
                                     <div class="d-flex align-items-center justify-content-between">
-                                        <button type="submit" name="apply_coupon" class="apply-coupon"
-                                            value="Apply coupon">Apply coupon</button>
-                                        <button type="submit" name="update_cart" class="update-cart" value="Update cart"
-                                            disabled="" aria-disabled="true">Update Cart</button>
+                                        <button name="update_cart" class="update-cart" ><a href="{{ route("home") }}" style="color: white" >Continue Shopping</a></button>
+                                                                              
                                     </div>
                                 </td>
+                                <td class="product-subtotal" colspan="2">
+                                    <span class="woocommerce-Price-amount"><bdi><span
+                                                class="woocommerce-Price-currencySymbol">Total :$</span>{{ session()->get('total'); }}</bdi></span>
+                                </td>
                             </tr>
-                        </tfoot> --}}
+                        </tfoot>
                     </table>
                 </div>
                 <div class="row mt-5">
@@ -149,29 +151,30 @@
                         </div>
                     </div>
                 </div>
+                @endif
             </form>
         </div>
     </section>
 @section('scripts')
 <script type="text/javascript">
-  $(".update-product").change(function (e) {
-      e.preventDefault();
-      var ele = $(this);
-      $.ajax({
-          url: '{{ route('updateCart') }}',
-          method: "patch",
-          data: {
-              _token: '{{ csrf_token() }}', 
-              id: ele.parents("div").attr("rowup"),
-              quantity: document.getElementbyClass('input-text'),
-              total: {{ session()->get('total'); }},
-          },
-          success: function (response) {
-             
-             window.location.reload();
-          }
-      });
-  });
+   $(".cart_update").change(function (e) {
+        e.preventDefault();
+    
+        var ele = $(this);
+    
+        $.ajax({
+            url: '{{ route('update_cart') }}',
+            method: "patch",
+            data: {
+                _token: '{{ csrf_token() }}', 
+                id: ele.parents("td").attr("data-id"), 
+                quantity: ele.parents("td").find(".quantity").val()
+            },
+            success: function (response) {
+               window.location.reload();
+            }
+        });
+    });
 </script>
 @endsection
 @endsection
