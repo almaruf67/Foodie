@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
-<section class="banner" style="background-image:url(https://via.placeholder.com/1920x470)">
+<section class="banner" style="background-color: #FFDEAD;">
       <div class="container">
          <div class="row align-items-center">
             <div class="col-lg-7">
                <div class="title-area-data">
-                  <h2>Table Menu</h2>
+                  <h2>Menu</h2>
                   <p>A magical combination that sent aromas to the taste buds</p>
                </div>
                <ol class="breadcrumb">
@@ -13,20 +13,20 @@
                     <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
                   </li>
                   <li class="breadcrumb-item active" aria-current="page">Menus</li>
-                 
+
                </ol>
             </div>
             <div class="col-lg-5">
                <div class="row">
                   <div class="col-6">
                      <div class="title-area-img">
-                        <img alt="title-area-img" src="https://via.placeholder.com/230x376">
+                        <img alt="title-area-img" src="{{url('/static-image/menu1.jpg')}}">
                         <img alt="pata" class="pata" src="assets/img/pata.png">
                      </div>
                   </div>
                   <div class="col-6">
                      <div class="title-area-img two">
-                        <img alt="title-area-img" src="https://via.placeholder.com/230x376">
+                        <img alt="title-area-img" src="{{url('/static-image/menu2.jpg')}}">
                      </div>
                   </div>
                </div>
@@ -155,7 +155,7 @@
                      </div>
                   </div>
                   <div class="private-table-img">
-                     <img alt="private-table" src="https://via.placeholder.com/360x460">
+                     <img alt="private-table" src="{{url('/static-image/candle.jpg')}}">
                   </div>
                </div>
             </div>
@@ -173,7 +173,7 @@
                      </div>
                   </div>
                   <div class="private-table-img">
-                     <img alt="private-table" src="https://via.placeholder.com/360x460">
+                     <img alt="private-table" src="{{url('/static-image/birthday.jpg')}}">
                   </div>
                </div>
             </div>
@@ -190,7 +190,7 @@
                </div>
                <div class="d-flex align-items-center">
                   <div class="year-experience">
-                     <h3>14 Years Experience</h3>
+                     <h3>5 Years Experience</h3>
                      <ul class="star">
                            <li><i class="fa-solid fa-star"></i></li>
                            <li><i class="fa-solid fa-star"></i></li>
@@ -212,17 +212,17 @@
                <div class="row align-items-center">
                   <div class="col-lg-6">
                      <div class="watch-video-img">
-                        <img alt="img" src="https://via.placeholder.com/254x254">
+                        <img alt="img" src="{{url('/static-image/service1.jpg')}}">
                      </div>
                      <div class="watch-video-img two">
-                        <img alt="img" src="https://via.placeholder.com/254x254">
+                        <img alt="img" src="{{url('/static-image/service2.jpg')}}">
                      </div>
                   </div>
                   <div class="col-lg-6">
                      <div class="watch-video-img">
-                        <img alt="img" src="https://via.placeholder.com/254x254">
+                        <img alt="img" src="{{url('/static-image/service3.jpg')}}">
                         <img alt="arrow" class="arrow" src="assets/img/arrow.png">
-                        <h6>Great Hospitality and 
+                        <h6>Great Hospitality and
                             Entertainment</h6>
                      </div>
                   </div>

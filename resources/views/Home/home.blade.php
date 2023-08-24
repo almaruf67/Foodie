@@ -2,26 +2,11 @@
 @section('content')
     <section class="slider-hero">
         <div class="slider-home-1 owl-carousel owl-theme">
-            <div class="hero-section item" style="background-image: url(https://via.placeholder.com/1920x709)">
-                <div class="container">
+            <div class="hero-section item">
+                <div class="container-fluid">
                     <div class="row align-items-end">
-                        <div class="col-xl-6">
-                            <div class="featured-area">
-                                <h2>The Perfect Space to Enjoy Fantastic Food</h2>
-                                <h5>Festive dining at Farthings where we are strong believers in using the very best produce
-                                </h5>
-                                <div class="d-md-flex align-items-center">
-                                    <a href="menu-1.html" class="button">See Our Menus</a>
-                                    <div class="video">
-                                        <a data-fancybox="" href="https://www.youtube.com/watch?v=1La4QzGeaaQ"><i>
-                                                <svg width="15" height="22" viewBox="0 0 11 17" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M11 8.5L0.5 0.272758L0.5 16.7272L11 8.5Z" fill="#fff" />
-                                                </svg>
-                                            </i>Watch Video</a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-xl-12">
+                            <img style="width: 100%;" src="{{url('/static-image/Food_banner.jpg')}}" alt="Image"/>
                         </div>
                     </div>
                 </div>
@@ -78,7 +63,7 @@
         <div class="weekly-special">
             <span>Weekly Special</span>
             <div>
-                <h4><sup>$</sup>90.85</h4>
+                <h4><sup>৳</sup>299</h4>
                 <h5>Sicilian Pizza</h5>
                 <ul class="star">
                     <li><i class="fa-solid fa-star"></i></li>
@@ -88,7 +73,7 @@
                     <li><i class="fa-solid fa-star"></i></li>
                 </ul>
             </div>
-            <img alt="Pizza" src="https://via.placeholder.com/129x129">
+            <img style="width: 100px; height:100px; border-radius: 5px;" src="{{url('/static-image/pizza1.jpg')}}" alt="Image"/>
         </div>
     </section>
     {{-- <section class="gap">
@@ -169,10 +154,10 @@
             </div>
             <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
-                    data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
-                    aria-selected="true">
+                        data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                        aria-selected="true">
                     <svg enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512"
-                        xmlns="http://www.w3.org/2000/svg">
+                         xmlns="http://www.w3.org/2000/svg">
                         <g>
                             <path
                                 d="m457.49 296c-31.37 0-47.77-16.28-60.95-29.36-12.07-11.98-20.8-20.64-39.8-20.64-5.87 0-10.76.82-15.08 2.32 4.559 50.122-35.161 93.68-85.66 93.68-50.517 0-90.216-43.579-85.66-93.67-4.32-1.5-9.21-2.33-15.09-2.33-19 0-27.73 8.66-39.8 20.65-13.18 13.07-29.57 29.35-60.94 29.35-22.45 0-38.345-7.995-53.91-22.54 8.959 133.461 119.991 238.54 255.4 238.54 135.312 0 246.455-105.024 255.4-238.53-15.542 14.491-31.453 22.53-53.91 22.53zm-64.29 21c6.64-4.94 16.04-3.57 20.99 3.08l11.01 14.79c4.95 6.64 3.57 16.04-3.07 20.99-6.613 4.917-16.019 3.616-20.99-3.08l-11.02-14.79c-4.94-6.64-3.57-16.04 3.08-20.99zm-94.73 79.49 16.85-6.71c7.7-3.06 16.42.69 19.49 8.39 3.06 7.7-.7 16.42-8.39 19.48-16.271 6.16-17.659 7.78-22.4 7.78-16.46 0-20.846-22.861-5.55-28.94zm-133.06-28.37c8.09-1.8 16.1 3.3 17.89 11.39l4 18c1.8 8.09-3.3 16.1-11.38 17.9-8.253 1.802-16.134-3.424-17.9-11.39l-4-18c-1.8-8.09 3.3-16.1 11.39-17.9zm-72.4-45.6 17-7.16c7.63-3.21 16.43.37 19.64 8.01 3.22 7.63-.37 16.43-8 19.64-16.247 6.485-17.765 8.33-22.81 8.33-16.299 0-20.857-22.498-5.83-28.82z" />
@@ -183,9 +168,9 @@
 
                     Dessert</button>
                 <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
-                    data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
-                    aria-selected="false"><svg height="512pt" viewBox="0 0 511 512" width="512pt"
-                        xmlns="http://www.w3.org/2000/svg">
+                        data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
+                        aria-selected="false"><svg height="512pt" viewBox="0 0 511 512" width="512pt"
+                                                   xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="m394.800781 184.148438c-.691406 3.113281-3.0625 5.582031-6.144531 6.402343-5.734375 1.53125-11.308594 3.617188-16.640625 6.226563-4.253906 2.019531-8.335937 4.390625-12.203125 7.085937-1.621094 1.105469-3.242188 2.214844-4.777344 3.410157-2.558594 1.964843-5.121094 4.097656-7.59375 6.230468l-6.742187 6.742188c0 .085937-.085938.167968-.171875.253906-1.449219 1.621094-2.984375 3.242188-4.4375 4.949219 0 .085937-.085938.171875-.253906.257812-4.3125 5.292969-8.25 10.878907-11.777344 16.726563-.765625 1.109375-1.363282 2.21875-2.046875 3.410156-2.132813 3.757812-4.097657 7.597656-6.058594 11.691406-.34375.855469-.683594 1.621094-1.109375 2.476563-1.964844 4.4375-3.753906 9.128906-5.375 13.910156-.769531 2.386719-1.539062 4.691406-2.21875 7.082031-1.367188 4.777344-2.648438 9.726563-3.671875 14.847656-.425781 2.304688-.9375 4.605469-1.277344 6.996094-.34375 2.390625-.769531 4.609375-1.027343 6.914063-.339844 1.960937-.59375 3.921875-.765626 5.886719-.257812 2.558593-.511718 5.203124-.683593 7.851562-.253907 3.070312-.425781 6.144531-.511719 9.300781h187.476562c-.9375-72.960937-14.421874-122.964843-38.824218-146.519531l20.222656-60.585938c1.589844-4.132812 5.75-6.683593 10.15625-6.230468 17.441406-.015625 32.066406-13.179688 33.910156-30.527344 1.839844-17.347656-9.691406-33.289062-26.742187-36.96875-4.667969-1.023438-9.5-1.023438-14.167969 0-3.011719.65625-6.113281-.640625-7.765625-3.242188-7.964844-11.488281-22.128906-16.957031-35.746094-13.804687-13.617187 3.148437-23.9375 14.285156-26.046875 28.105469-2.105468 13.816406 4.421875 27.523437 16.480469 34.59375 3.558594 2.226562 5.089844 6.628906 3.671875 10.582031l-21.078125 62.890625c-4.105469.398438-8.179687 1.050781-12.203125 1.960938 1.109375.941406 2.21875 1.792968 3.328125 2.730468 2.402344 2.0625 3.484375 5.269532 2.816406 8.363282zm43.265625-70.570313c3.929688-11.550781-.679687-24.28125-11.09375-30.632813-6.035156-3.527343-9.308594-10.371093-8.269531-17.28125 1.042969-6.910156 6.191406-12.488281 12.996094-14.074218 6.804687-1.589844 13.890625 1.128906 17.886719 6.863281 5.542968 8.289063 15.609374 12.324219 25.34375 10.15625 2.339843-.429687 4.738281-.429687 7.082031 0 6.707031 1.527344 11.867187 6.890625 13.140625 13.652344.921875 5.027343-.460938 10.207031-3.765625 14.109375-3.308594 3.898437-8.1875 6.113281-13.300781 6.027344-11.65625-.277344-22.179688 6.945312-26.113282 17.921874l-18.515625 55.550782-1.792969-.765625c-1.457031-.695313-2.96875-1.265625-4.523437-1.707031-.597656-.171876-1.195313-.429688-1.875-.597657-.683594-.171875-1.195313-.34375-1.878906-.511719-.359375-.125-.730469-.210937-1.109375-.257812-1.109375-.253906-2.304688-.511719-3.5-.683594zm0 0" />
                         <path
@@ -198,7 +183,7 @@
                             d="m299.140625 102.398438c0 4.714843 3.820313 8.535156 8.535156 8.535156 4.710938 0 8.53125-3.820313 8.53125-8.535156 0-.648438 0-.730469 1.769531-2.5 4.289063-3.625 6.765626-8.957032 6.765626-14.574219 0-5.617188-2.476563-10.949219-6.765626-14.574219-1.769531-1.757812-1.769531-1.84375-1.769531-2.484375s0-.722656 1.769531-2.480469c4.261719-3.652344 6.730469-8.972656 6.765626-14.585937 0-4.710938-3.820313-8.53125-8.535157-8.53125-4.710937 0-8.53125 3.820312-8.53125 8.53125 0 .640625 0 .726562-1.765625 2.484375-4.292968 3.625-6.765625 8.953125-6.765625 14.570312 0 5.617188 2.472657 10.945313 6.765625 14.570313 1.765625 1.773437 1.765625 1.859375 1.765625 2.507812 0 .648438 0 .734375-1.765625 2.5-4.257812 3.648438-6.726562 8.960938-6.769531 14.566407zm0 0" />
                     </svg>Steak</button>
                 <button class="nav-link" id="v-pills-coffee-tab" data-bs-toggle="pill" data-bs-target="#v-pills-coffee"
-                    type="button" role="tab" aria-controls="v-pills-coffee" aria-selected="false"><svg
+                        type="button" role="tab" aria-controls="v-pills-coffee" aria-selected="false"><svg
                         version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                         x="0px" y="0px" width="21.664px" height="21.665px" viewBox="0 0 21.664 21.665"
                         style="enable-background:new 0 0 21.664 21.665;" xml:space="preserve">
@@ -219,7 +204,7 @@
                     </svg>
                     Coffee</button>
                 <button class="nav-link" id="v-pills-pizza-tab" data-bs-toggle="pill" data-bs-target="#v-pills-pizza"
-                    type="button" role="tab" aria-controls="v-pills-pizza" aria-selected="false"><svg
+                        type="button" role="tab" aria-controls="v-pills-pizza" aria-selected="false"><svg
                         version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                         x="0px" y="0px" width="305.934px" height="305.934px"
                         viewBox="0 0 305.934 305.934" style="enable-background:new 0 0 305.934 305.934;"
@@ -302,10 +287,10 @@
             M237.515,78.729c-4.986,0,4.583-4.086,6.67-4.086C249.171,74.638,239.602,78.729,237.515,78.729z" />
                     </svg>Pizza</button>
                 <button class="nav-link" id="v-pills-burger-tab" data-bs-toggle="pill" data-bs-target="#v-pills-burger"
-                    type="button" role="tab" aria-controls="v-pills-burger" aria-selected="false">
+                        type="button" role="tab" aria-controls="v-pills-burger" aria-selected="false">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                        x="0px" y="0px" viewBox="0 0 511.992 511.992"
-                        style="enable-background:new 0 0 511.992 511.992;" xml:space="preserve">
+                         x="0px" y="0px" viewBox="0 0 511.992 511.992"
+                         style="enable-background:new 0 0 511.992 511.992;" xml:space="preserve">
                         <path
                             d="M481.274,389.111H30.732c-16.936,0-30.719,13.783-30.719,30.719c0,28.22,22.957,51.198,51.198,51.198h409.584
                           c28.241,0,51.198-22.978,51.198-51.198C511.992,402.893,498.21,389.111,481.274,389.111z" />
@@ -337,11 +322,11 @@
             </div>
             <div class="tab-content" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
-                    aria-labelledby="v-pills-home-tab">
+                     aria-labelledby="v-pills-home-tab">
                     <div class="row align-items-center discover-menu">
                         <div class="col-xl-6">
                             <div class="discover-img">
-                                <img alt="discover" src="https://via.placeholder.com/590x588">
+                                <img style="width: 100%;" src="{{url('/static-image/dessert.jpg')}}" alt="Image"/>
                             </div>
                         </div>
                         <div class="col-xl-5">
@@ -351,10 +336,10 @@
                                     @foreach ($Desserts as $Dessert)
                                         <li>
                                             <div>
-                                             <a href="{{ route('details', $Dessert->id) }}" @style('text-decoration:none')>
-                                                <h6>{{ $Dessert->Title }}</h6>
-                                                <p>{{ $Dessert->Description }}</p>
-                                             </a>
+                                                <a href="{{ route('details', $Dessert->id) }}" @style('text-decoration:none')>
+                                                    <h6>{{ $Dessert->Title }}</h6>
+                                                    <p>{{ $Dessert->Description }}</p>
+                                                </a>
                                             </div>
                                             <span>{{ $Dessert->Price }}৳</span>
                                         </li>
@@ -368,7 +353,7 @@
                     <div class="row align-items-center discover-menu">
                         <div class="col-xl-6">
                             <div class="discover-img">
-                                <img alt="discover" src="https://via.placeholder.com/590x588">
+                                <img style="width: 100%;" src="{{url('/static-image/steak.jpg')}}" alt="Image"/>
                             </div>
                         </div>
                         <div class="col-xl-5">
@@ -378,10 +363,10 @@
                                     @foreach ($Steaks as $Steak)
                                         <li>
                                             <div>
-                                             <a href="{{ route('details', $Steak->id) }}" @style('text-decoration:none')>
-                                                <h6>{{ $Steak->Title }}</h6>
-                                                <p>{{ $Steak->Description }}</p>
-                                             </a>
+                                                <a href="{{ route('details', $Steak->id) }}" @style('text-decoration:none')>
+                                                    <h6>{{ $Steak->Title }}</h6>
+                                                    <p>{{ $Steak->Description }}</p>
+                                                </a>
                                             </div>
                                             <span>{{ $Steak->Price }}৳</span>
                                         </li>
@@ -395,7 +380,7 @@
                     <div class="row align-items-center discover-menu">
                         <div class="col-xl-6">
                             <div class="discover-img">
-                                <img alt="discover" src="https://via.placeholder.com/590x588">
+                                <img style="width: 100%;" src="{{url('/static-image/coffee.jpg')}}" alt="Image"/>
                             </div>
                         </div>
                         <div class="col-xl-5">
@@ -405,10 +390,10 @@
                                     @foreach ($Coffees as $Coffee)
                                         <li>
                                             <div>
-                                             <a href="{{ route('details', $Coffee->id) }}" @style('text-decoration:none')>
-                                                <h6>{{ $Coffee->Title }}</h6>
-                                                <p>{{ $Coffee->Description }}</p>
-                                             </a>
+                                                <a href="{{ route('details', $Coffee->id) }}" @style('text-decoration:none')>
+                                                    <h6>{{ $Coffee->Title }}</h6>
+                                                    <p>{{ $Coffee->Description }}</p>
+                                                </a>
                                             </div>
                                             <span>{{ $Coffee->Price }}৳</span>
                                         </li>
@@ -422,7 +407,7 @@
                     <div class="row align-items-center discover-menu">
                         <div class="col-xl-6">
                             <div class="discover-img">
-                                <img alt="discover" src="https://via.placeholder.com/590x588">
+                                <img style="width: 100%;" src="{{url('/static-image/pizza2.jpg')}}" alt="Image"/>
                             </div>
                         </div>
                         <div class="col-xl-5">
@@ -432,10 +417,10 @@
                                     @foreach ($Pizzas as $Pizza)
                                         <li>
                                             <div>
-                                             <a href="{{ route('details', $Pizza->id) }}" @style('text-decoration:none')>
-                                                <h6>{{ $Pizza->Title }}</h6>
-                                                <p>{{ $Pizza->Description }}</p>
-                                             </a>
+                                                <a href="{{ route('details', $Pizza->id) }}" @style('text-decoration:none')>
+                                                    <h6>{{ $Pizza->Title }}</h6>
+                                                    <p>{{ $Pizza->Description }}</p>
+                                                </a>
                                             </div>
                                             <span>{{ $Pizza->Price }}৳</span>
                                         </li>
@@ -449,8 +434,7 @@
                     <div class="row align-items-center discover-menu">
                         <div class="col-xl-6">
                             <div class="discover-img">
-                                <img alt="discover"
-                                    src="https://via.placeholder.com/590x588https://via.placeholder.com/590x588">
+                                <img style="width: 100%;" src="{{url('/static-image/burger.jpg')}}" alt="Image"/>
                             </div>
                         </div>
                         <div class="col-xl-5">
@@ -460,10 +444,10 @@
                                     @foreach ($Burgers as $Burger)
                                         <li>
                                             <div>
-                                             <a href="{{ route('details', $Burger->id) }}" @style('text-decoration:none')>
-                                                <h6>{{ $Burger->Title }}</h6>
-                                                <p>{{ $Burger->Description }}</p>
-                                             </a>
+                                                <a href="{{ route('details', $Burger->id) }}" @style('text-decoration:none')>
+                                                    <h6>{{ $Burger->Title }}</h6>
+                                                    <p>{{ $Burger->Description }}</p>
+                                                </a>
                                             </div>
                                             <span>{{ $Burger->Price }}৳</span>
                                         </li>
@@ -482,7 +466,7 @@
                 <h2>Featured Dishes</h2>
                 <div class="line"></div>
             </div>
-            <h2 class="mb-3">Laravel Add To Shopping Cart</h2>
+            <h2 class="mb-3">Add To Shopping Cart</h2>
             @if (session('success'))
                 <div class="alert alert-success">
                     {{ session('success') }}
@@ -493,10 +477,10 @@
                     <div class="item col-xl-12">
                         <div class="featured-dishes">
                             <div class="featured-dishes-img">
-                              <a href="{{ route('details', $item->id) }}" @style('text-decoration:none')>
-                                <img alt="featured-dishes" src="{{ asset($item->Poster) }}" width="200px"
-                                    height="200px">
-                              </a>
+                                <a href="{{ route('details', $item->id) }}" @style('text-decoration:none')>
+                                    <img alt="featured-dishes" src="{{ asset($item->Poster) }}" width="200px"
+                                         height="200px">
+                                </a>
                             </div>
                             <ul class="star">
                                 <li><i class="fa-solid fa-star"></i></li>
@@ -528,24 +512,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="bbq" style="background-image: url(https://via.placeholder.com/630x366)">
+                    <div class="bbq" style="background-image: url(../static-image/Steaks_BBQ.jpg)">
                         <h2>Steaks & BBQ</h2>
                         <p>canonical classics to obscure<br> tiki drinks</p>
                         <div class="bbr-price">
                             <div>
-                                <h3>৳120</h3>
+                                <h3>৳420</h3>
                                 <span>per person</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="bbq mb-0" style="background-image: url(https://via.placeholder.com/630x366)">
+                    <div class="bbq mb-0" style="background-image: url(../static-image/Cocktails.jpg)">
                         <h2>Cocktails</h2>
                         <p>canonical classics to obscure <br> tiki drinks</p>
                         <div class="bbr-price">
                             <div>
-                                <h3>৳120</h3>
+                                <h3>৳150</h3>
                                 <span>per person</span>
                             </div>
                         </div>
@@ -598,14 +582,14 @@
             </div>
         </div>
     </section>
-    
+
     <section class="gap">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6">
                     <div class="heading">
                         <span>Testimonials & Reviews</span>
-                        <h2>Our Customar Feedbacks</h2>
+                        <h2>Our Customer Feedbacks</h2>
                     </div>
                     <div class="bratlee-slider owl-carousel owl-theme">
                         <div class="bratlee-hamint item">
@@ -672,9 +656,9 @@
                 </div>
                 <div class="col-xl-6">
                     <div class="bratlee-img">
-                        <img alt="bratlee-hamin2" class="bratlee-hamint-2" src="https://via.placeholder.com/292x292">
-                        <img alt="bratlee-hamint" class="bratlee-hamint-1" src="https://via.placeholder.com/292x292">
-                        <img alt="bratlee-hamin3" class="bratlee-hamint-3" src="https://via.placeholder.com/292x292">
+                        <img alt="bratlee-hamin2" class="bratlee-hamint-2" src="{{url('/static-image/customer3.jpg')}}" width="292px" height="292px">
+                        <img alt="bratlee-hamint" class="bratlee-hamint-1" src="{{url('/static-image/customer2.jpg')}}" width="292px" height="292px">
+                        <img alt="bratlee-hamin3" class="bratlee-hamint-3" src="{{url('/static-image/customer1.jpg')}}" width="292px" height="292px">
                     </div>
                 </div>
             </div>
@@ -722,11 +706,11 @@
                 </div>
                 <div class="col-xl-6">
                     <div class="manage-your-img">
-                        <img alt="manage-your" src="https://via.placeholder.com/649x559">
+                        <img alt="manage-your" width="649" height="559" src="{{url('/static-image/manage.jpg')}}" class="rounded">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
 @endsection

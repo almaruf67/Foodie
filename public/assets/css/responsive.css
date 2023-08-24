@@ -311,7 +311,7 @@
     font-size: 20px;
   }
   #countdown ul li span {
-     margin-top: 0px; 
+     margin-top: 0px;
   }
   .download-from h5 {
     font-size: 16px;
@@ -418,7 +418,7 @@
     font-size: 18px;
   }
   .hero-section {
-    padding-top: 120px;
+    padding-top: 0px;
   }
   .about-text {
     width: 100%;
@@ -438,7 +438,7 @@
   }
   .chef > img {
     width: 100%;
-  } 
+  }
   .app-foods:before {
     width: 660px;
   }
@@ -1131,7 +1131,7 @@
     	width: 50%;
 		}
 		.featured-arae-two-img.three {
-     margin-top: 0px; 
+     margin-top: 0px;
 		}
 		.category-choose-img:before{
 			display: none;
@@ -1179,7 +1179,7 @@
 		.section-featured {
     padding-top: 280px;
     margin-top: -212px;
-	}	
+	}
 		#progress {
     height: 50px;
     width: 50px;
@@ -1418,7 +1418,7 @@
 	}
 	.history-text img{
 		margin-right: 0;
-	}	
+	}
 	.history-text {
     flex-wrap: wrap;
     text-align: center;
@@ -1473,7 +1473,7 @@
 		.section-featured {
     padding-top: 280px;
     margin-top: -230px;
-		}		
+		}
 	.heading-two .line {
     width: 170px;
     height: 6px;
@@ -1645,7 +1645,7 @@
     font-size: 14px;
 	}
 	.blog-img-video i svg {
-    width: 10px;	
+    width: 10px;
 	}
 	.get-in-touch .booking{
 		flex-wrap: wrap;
@@ -1735,7 +1735,7 @@
   }
   form.add-review.leave-comment .rating {
     display: block;
-     padding-bottom: 0px; 
+     padding-bottom: 0px;
   }
   .private-table {
     width: 330px;

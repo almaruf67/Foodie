@@ -26,7 +26,7 @@
  </head>
 <body>
 <!-- preloader -->
-<div class="preloader"> 
+<div class="preloader">
     <div class="container">
       <div class="dot dot-1"></div>
       <div class="dot dot-2"></div>
@@ -43,12 +43,12 @@
                   <div class="content-header me-5">
                     <i>
                         <svg height="512" viewBox="0 0 32 32" width="512" xmlns="http://www.w3.org/2000/svg"><g id="_16-Smartphone" data-name="16-Smartphone"><path d="m23 2h-14a3 3 0 0 0 -3 3v22a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-22a3 3 0 0 0 -3-3zm-5.39 2-.33 1h-2.56l-.33-1zm6.39 23a1 1 0 0 1 -1 1h-14a1 1 0 0 1 -1-1v-22a1 1 0 0 1 1-1h3.28l.54 1.63a2 2 0 0 0 1.9 1.37h2.56a2 2 0 0 0 1.9-1.37l.54-1.63h3.28a1 1 0 0 1 1 1z"/><path d="m17 24h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2z"/></g></svg>
-                    </i><h4>Phone:<a href="callto:+1(850)344066">+1 (850) 344 0 66</a></h4>
+                    </i><h4>Phone:<a href="callto:+1(850)344066">+88 01595643223</a></h4>
                   </div>
                   <div class="content-header">
                     <i>
                         <svg height="512" viewBox="0 0 32 32" width="512" xmlns="http://www.w3.org/2000/svg"><g id="_01-Email" data-name="01-Email"><path d="m29.61 12.21-13-10a1 1 0 0 0 -1.22 0l-13 10a1 1 0 0 0 -.39.79v14a3 3 0 0 0 3 3h22a3 3 0 0 0 3-3v-14a1 1 0 0 0 -.39-.79zm-13.61-7.95 11.36 8.74-11.36 8.74-11.36-8.74zm11 23.74h-22a1 1 0 0 1 -1-1v-12l11.39 8.76a1 1 0 0 0 1.22 0l11.39-8.76v12a1 1 0 0 1 -1 1z"/></g></svg>
-                     </i><h4>Email:<a href="mailto:+1(850)344066">info@domain.com</a></h4>
+                     </i><h4>Email:<a href="mailto:+1(850)344066">info@foodio.com</a></h4>
                   </div>
                </div>
             </div>
@@ -63,7 +63,7 @@
                   </a>
                   <a href="#">
                      Youtube
-                  </a>   
+                  </a>
                </div>
                <div class="register dropdown">
                 <i>
@@ -74,7 +74,7 @@
                      <a href="{{ route('login') }}">Login / Register</a>
                   @endif
                   @else
-                           
+
                   <a id="navbarDropdown" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     {{ Auth::user()->name }}
                 </a>
@@ -90,7 +90,7 @@
                         @csrf
                     </form>
                 </div>
-                            
+
                         @endguest
                </div>
                </div>
@@ -112,10 +112,10 @@
                     <a href="{{ route("viewcart") }}" class="pr-cart">
 
                       <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge bg-danger">{{ count((array) session('cart')) }}</span>
-  
+
                   </a>
 
-                  
+
                     <div class="bar-menu">
                          <i class="fa-solid fa-bars"></i>
                     </div>
@@ -127,19 +127,19 @@
                   <ul class="navbar-links">
                     <li class="navbar-dropdown">
                       <a href="{{ route('home') }}">home</a>
-                      
+
                     </li>
                     <li class="navbar-dropdown">
                       <a href="{{ route("menu") }}">Menu</a>
-                      
+
                     </li>
                     <li class="navbar-dropdown">
                       <a href="{{ route("shop") }}">Shop</a>
                     </li>
-                    
+
                     <li class="navbar-dropdown">
                       <a href="{{ route('about') }}">About</a>
-                      
+
                     </li>
                     <li class="navbar-dropdown">
                       <a href="{{ route('contact') }}">Contact</a>
@@ -181,19 +181,19 @@
                         <div rowdel="{{ $id }}" class="actions">
                           <a class="btn btn-outline-danger delete-product position-absolute bottom-50 end-0"><i class="fa-solid fa-trash"></i></a>
                         </div>
-                        
+
 
                       </li>
                       @endforeach
                       @endif
-                    
+
 
                     </ul>
 
                       <div class="cart-total d-flex align-items-center justify-content-between">
                         @if(session('total'))
                         <span class="font-semi-bold">Total:</span>
-                        
+
                         <span class="font-semi-bold">{{ session()->get('total'); }}৳</span>
                         @endif
                       </div>
@@ -209,11 +209,12 @@
                 </div>
 
               </div>
-                     <a href="{{ route('contact') }}" class="button">Reserve a Table</a>
+
+                     <a href="{{ route('contact') }}" class="button">Reserve Table</a>
                </div>
             </div>
          </div>
-   </div>  
+   </div>
   </div>
   <div class="mobile-nav hmburger-menu" id="mobile-nav" style="display:block;">
       <div class="res-log">
@@ -224,14 +225,14 @@
         <ul>
 
           <li class="menu-item-has-children"><a href="{{ route('home') }}">Home</a>
-              
-           
+
+
           </li>
           <li class="menu-item-has-children"><a href="{{ route('menu') }}">menu</a>
-            
+
           </li>
 
-          
+
           <li class="menu-item-has-children"><a href="JavaScript:void(0)">shop</a>
 
           <ul class="sub-menu">
@@ -242,10 +243,10 @@
           </ul>
 
           </li>
-          
+
           <li class="menu-item-has-children"><a href="{{ route('about') }}">about</a>
 
-         
+
 
           </li>
 
@@ -260,13 +261,13 @@
 @yield('content')
 
 
-<footer style="background-image: url(https://via.placeholder.com/1920x660);background-color: #f5f8fd;">
+<footer style="background-color: #f5f8fd;">
    <div class="container">
       <div class="row">
          <div class="col-xl-4 col-lg-6">
             <div class="logo-white">
                <a href="{{ route('home') }}"><img alt="logo-white" src="{{ asset("assets/img/logo-white.png") }}"></a>
-               <p>Tuesday - Saturday:   12:00pm - 23:00pm 
+               <p>Tuesday - Saturday:   12:00pm - 23:00pm
                <span>Closed on Sunday</span></p>
                <img alt="tripa" src="{{ asset("assets/img/tripa.png") }}">
                <h6>5 star rated on TripAdvisor</h6>
@@ -312,7 +313,7 @@
             <a href="#">Facebook</a>
             <a href="#">Twitter</a>
             <a href="#">Instagram</a>
-            <a href="#">Youtube</a>   
+            <a href="#">Youtube</a>
          </div>
       </div>
    </div>
@@ -334,18 +335,18 @@
 <script type="text/javascript" src="{{ asset("assets/js/sweetalert.min.js") }}"></script>
 
 <script type="text/javascript">
-   
+
   $(".delete-product").click(function (e) {
       e.preventDefault();
- 
+
       var ele = $(this);
- 
+
       if(confirm("Do you really want to delete?")) {
           $.ajax({
               url: '{{ route('delete.cart.product') }}',
               method: "DELETE",
               data: {
-                  _token: '{{ csrf_token() }}', 
+                  _token: '{{ csrf_token() }}',
                   id: ele.parents("div").attr("rowdel")
               },
               success: function (response) {
@@ -354,7 +355,7 @@
           });
       }
   });
- 
+
 </script>
 @yield('scripts')
 </body>

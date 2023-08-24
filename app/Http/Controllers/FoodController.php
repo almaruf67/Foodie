@@ -7,12 +7,11 @@ use Illuminate\Http\Request;
 
 class FoodController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        return view('Product.product');
+        $products = Product::orderBy('id', 'asc')->paginate(10);
+        return view('product.index', compact('products'));
     }
 
     /**
@@ -20,7 +19,7 @@ class FoodController extends Controller
      */
     public function create()
     {
-        //
+        return view('product.create');
     }
 
     /**
@@ -28,27 +27,29 @@ class FoodController extends Controller
      */
     public function store(Request $request)
     {
-        
+        //For Image
+
         $file = $request->poster;
         if ($file) {
-            $extention = $file->getClientOriginalExtension();
-            $fileName = time() . rand(1, 999999) . '.' . $extention;
+            $extension = $file->getClientOriginalExtension();
+            $fileName = time() . rand(1, 999999) . '.' . $extension;
             $file->move('images/post', $fileName);
             $path = '/images/post/' . $fileName;
         } else {
             $path = null;
         }
 
+        $product = new Product();
 
-        $prod = new Product();
-        $prod->Category = $request->category;
-        $prod->Title = $request->title;
-        $prod->Poster = $path;
-        $prod->Description = $request->description;
-        $prod->Price = $request->price;
-        $prod->save();
+        $product->Category = $request->category;
+        $product->Title = $request->title;
+        $product->Poster = $path;
+        $product->Description = $request->description;
+        $product->Price = $request->price;
 
-        return redirect()->route('home');
+        $product->save();
+
+        return redirect()->route('product.index');
     }
 
     /**
@@ -57,10 +58,9 @@ class FoodController extends Controller
     public function show($data)
     {
         $product = Product::where('id',$data)->first();
-        
+
         // dd($product);
-        return view('Product.details', compact('product'));
-        
+        return view('product.details', compact('product'));
     }
 
     /**
@@ -68,7 +68,9 @@ class FoodController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+
+        return view('product.edit', compact('product'));
     }
 
     /**
@@ -76,7 +78,24 @@ class FoodController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $file = $request->poster;
+        if ($file) {
+            $extension = $file->getClientOriginalExtension();
+            $fileName = time() . rand(1, 999999) . '.' . $extension;
+            $file->move('images/post', $fileName);
+            $product->Poster = '/images/post/' . $fileName;
+        }
+
+        $product->Category = $request->category;
+        $product->Title = $request->title;
+
+        $product->Description = $request->description;
+        $product->Price = $request->price;
+
+        $product->save();
+
+        return redirect()->route('product.index');
     }
 
     /**
@@ -84,6 +103,9 @@ class FoodController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+        return redirect()->back();
     }
 }

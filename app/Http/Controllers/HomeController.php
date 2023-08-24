@@ -51,7 +51,7 @@ class HomeController extends Controller
     public function shop()
     {
         $items = Product::orderBy('id', 'desc')->paginate(3);
-       
+
         // dd( $items->toarray());
         return view('Home.shop',compact('items'));
     }
@@ -62,7 +62,8 @@ class HomeController extends Controller
      */
     public function adminHome(): View
     {
-        return view('adminHome');
+//        return view('adminHome');
+        return view('admin-template.admin-dashboard');
     }
 
     /**

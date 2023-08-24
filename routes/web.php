@@ -6,10 +6,11 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SslCommerzPaymentController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Routes for Frontend
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -26,7 +27,6 @@ Route::get('/menu', [HomeController::class, 'menu'])->name('menu');
 Route::get('/shop', [HomeController::class, 'shop'])->name('shop');
 Route::get('/food/{data}', [FoodController::class, 'show'])->name('details');
 
-Route::resource('/product', FoodController::class);
 
 Auth::routes();
 
@@ -36,16 +36,31 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::patch('/update-shopping-cart', [CartController::class, 'update'])->name('update_cart');
     Route::delete('/delete-cart-product', [CartController::class, 'deleteProduct'])->name('delete.cart.product');
     Route::get('/cart', [CartController::class, 'index'])->name('viewcart');
-    
-});
-Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
-    Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
 });
-Route::middleware(['auth', 'user-access:manager'])->group(function () {
 
-    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
-});
+Route::group(['prefix' => 'admin', 'middleware' => ['auth:web,admin','auth:web,manager']], function() {
+    Route::get('/', [UserController::class, 'index'])->name('admin.home');
+    // Route::get('/admin/home', [UserController::class, 'index'])->name('admin.home');
+    Route::resource('/product', FoodController::class);
+    Route::resource('/user', UserController::class);
+    });
+
+// Route::middleware(['auth', 'user-access:admin'])->group(function () {
+
+//     Route::get('/admin', [UserController::class, 'index'])->name('admin.home');
+//     // Route::get('/admin/home', [UserController::class, 'index'])->name('admin.home');
+//     Route::resource('/admin/product', FoodController::class);
+//     Route::resource('/admin/user', UserController::class);
+
+// });
+// Route::middleware(['auth', 'user-access:manager'])->group(function () {
+//     Route::get('/manager', [UserController::class, 'index'])->name('manager.home');
+//     // Route::get('/admin/home', [UserController::class, 'index'])->name('admin.home');
+//     Route::resource('/admin/product', FoodController::class);
+//     Route::resource('/admin/user', UserController::class);
+
+// });
 
 // SSLCOMMERZ Start
 
@@ -55,3 +70,15 @@ Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
 Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 
 //SSLCOMMERZ END
+
+
+/*
+|--------------------------------------------------------------------------
+| Routes for Frontend
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/

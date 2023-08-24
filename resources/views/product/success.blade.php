@@ -18,8 +18,8 @@
 
         .card {
             background: white;
-            padding: 60px;
-            border-radius: 25%;
+            padding: 15px;
+            border-radius: 20%;
             box-shadow: 0 2px 3px #C8D0D8;
             display: inline-block;
             margin: 0 auto;

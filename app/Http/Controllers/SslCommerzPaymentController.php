@@ -25,13 +25,13 @@ class SslCommerzPaymentController extends Controller
         # CUSTOMER INFORMATION
         $post_data['cus_name'] =  auth()->user()->name ;
         $post_data['cus_email'] = auth()->user()->email;
-        $post_data['cus_add1'] = 'Customer Address';
+        $post_data['cus_add1'] = 'Mirpur';
         $post_data['cus_add2'] = "";
         $post_data['cus_city'] = "";
         $post_data['cus_state'] = "";
         $post_data['cus_postcode'] = "";
         $post_data['cus_country'] = "Bangladesh";
-        $post_data['cus_phone'] = '8801XXXXXXXXX';
+        $post_data['cus_phone'] = '8801532565852';
         $post_data['cus_fax'] = "";
 
         # SHIPMENT INFORMATION
@@ -83,7 +83,7 @@ class SslCommerzPaymentController extends Controller
 
     public function success(Request $request)
     {
-       
+
         session()->forget('cart');
         session()->forget('total');
         // dd(session()->get('cart'));
@@ -111,9 +111,9 @@ class SslCommerzPaymentController extends Controller
                     ->where('transaction_id', $tran_id)
                     ->update(['status' => 'Processing']);
 
-                
+
             }
-        } 
+        }
 
         return View('Product.success');
 

@@ -14,6 +14,5 @@ class Product extends Model
         'Poster',
         'Description',
         'Price',
-        
     ];
 }

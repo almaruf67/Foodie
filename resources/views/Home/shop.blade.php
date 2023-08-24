@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<section class="banner" style="background-image:url(https://via.placeholder.com/1920x470)">
+<section class="banner" style="background-color: #FFDEAD">
       <div class="container">
          <div class="row align-items-center">
             <div class="col-lg-7">
@@ -19,13 +19,13 @@
                <div class="row">
                   <div class="col-6">
                      <div class="title-area-img">
-                        <img alt="title-area-img" src="https://via.placeholder.com/230x376">
+                        <img alt="title-area-img" src="{{url('/static-image/shop1.jpg')}}">
                         <img alt="pata" class="pata" src="assets/img/pata.png">
                      </div>
                   </div>
                   <div class="col-6">
                      <div class="title-area-img two">
-                        <img alt="title-area-img" src="https://via.placeholder.com/230x376">
+                        <img alt="title-area-img" src="{{url('/static-image/shop2.jpg')}}">
                      </div>
                   </div>
                </div>

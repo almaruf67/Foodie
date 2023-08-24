@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<section class="banner" style="background-image:url(https://via.placeholder.com/1920x470)">
+<section class="banner" style="background-color:#FFDEAD;">
       <div class="container">
          <div class="row align-items-center">
             <div class="col-lg-7">
@@ -19,13 +19,13 @@
                <div class="row">
                   <div class="col-6">
                      <div class="title-area-img">
-                        <img alt="title-area-img" src="https://via.placeholder.com/230x376">
+                        <img alt="title-area-img" src="{{url('/static-image/contact1.jpg')}}">
                         <img alt="pata" class="pata" src="assets/img/pata.png">
                      </div>
                   </div>
                   <div class="col-6">
                      <div class="title-area-img two">
-                        <img alt="title-area-img" src="https://via.placeholder.com/230x376">
+                        <img alt="title-area-img" src="{{url('/static-image/contact2.jpg')}}">
                      </div>
                   </div>
                </div>
@@ -67,7 +67,7 @@
                         </i>
                         <div>
                            <span>for private dining</span>
-                           <a href="mailto:info@domain.com"><span>info@domain.com</span></a>
+                           <a href="mailto:info@domain.com"><span>foodio@domain.com</span></a>
                         </div>
                      </li>
                   </ul>
@@ -104,17 +104,18 @@
          </div>
       </div>
    </section>
-   <div class="container">
-      <div class="blog-img-video video mb-0">
-         <img alt="video-img" src="https://via.placeholder.com/1290x710">
-         <a data-fancybox="" href="https://www.youtube.com/watch?v=1La4QzGeaaQ"><i>
-               <svg width="15" height="22" viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11 8.5L0.5 0.272758L0.5 16.7272L11 8.5Z" fill="#fff" />
-               </svg>
-            </i>
-         </a>
-      </div>
-   </div>
+
+{{--   <div class="container">--}}
+{{--      <div class="blog-img-video video mb-0">--}}
+{{--         <img alt="video-img" src="https://via.placeholder.com/1290x710">--}}
+{{--         <a data-fancybox="" href="https://www.youtube.com/watch?v=1La4QzGeaaQ"><i>--}}
+{{--               <svg width="15" height="22" viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg">--}}
+{{--                  <path d="M11 8.5L0.5 0.272758L0.5 16.7272L11 8.5Z" fill="#fff" />--}}
+{{--               </svg>--}}
+{{--            </i>--}}
+{{--         </a>--}}
+{{--      </div>--}}
+{{--   </div>--}}
    <div class="container">
       <div class="opening-hours">
          <div class="day-time">
