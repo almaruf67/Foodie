@@ -76,76 +76,7 @@
             <img style="width: 100px; height:100px; border-radius: 5px;" src="{{url('/static-image/pizza1.jpg')}}" alt="Image"/>
         </div>
     </section>
-    {{-- <section class="gap">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6">
-                    <div class="heading">
-                        <span>About The Food Restaurant</span>
-                        <h2>New Ground with Dishes to be Enjoyed</h2>
-                    </div>
-                </div>
-                <div class="col-xl-6">
-                    <div class="about-text">
-                        <p>Nisl quam nestibulum ac quam nec odio eleme aucan ligula. Orci varius nat oque pena tibus et
-                            urient monte nascete ridiculus mus nellentesq um ac qu am nec odio rbine. Nisl quam nestibu
-                            aucan ligula. </p>
-                        <div class="mt-4 d-flex align-items-center">
-                            <img alt="girl" src="https://via.placeholder.com/80x80">
-                            <div>
-                                <h4>Willimes James</h4>
-                                <p>Director and Chief Operations Officer</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-xl-4 col-lg-6">
-                    <div class="restaurant-card">
-                        <img alt="Restaurant-img" class="w-100" src="https://via.placeholder.com/416x528">
-                        <div class="restaurant-span">
-                            <span>Restaurant</span>
-                        </div>
-                        <div class="coctail-bar">
-                            <h5>Restaurant</h5>
-                            <p>Nisl quam nestibulum ac quam nec aucan ligula. Orci varius natoque li um ac quam nec odio
-                                rbine.</p>
-                            <a href="contact.html">Reserve a Table</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="restaurant-card coctail">
-                        <img alt="Restaurant-img" class="w-100" src="https://via.placeholder.com/416x528">
-                        <div class="restaurant-span">
-                            <span>Coctail Bar</span>
-                        </div>
-                        <div class="coctail-bar">
-                            <h5>Coctail Bar</h5>
-                            <p>Nisl quam nestibulum ac quam nec aucan ligula. Orci varius natoque li um ac quam nec odio
-                                rbine.</p>
-                            <a href="contact.html">Reserve a Table</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="restaurant-card">
-                        <img alt="Restaurant-img" class="w-100" src="https://via.placeholder.com/416x528">
-                        <div class="restaurant-span">
-                            <span>Private Dining</span>
-                        </div>
-                        <div class="coctail-bar">
-                            <h5>Private Dining</h5>
-                            <p>Nisl quam nestibulum ac quam nec aucan ligula. Orci varius natoque li um ac quam nec odio
-                                rbine.</p>
-                            <a href="contact.html">Reserve a Table</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
+ 
     <section class="section-discover-menu mt-3">
         <div class="container">
             <div class="heading-two">

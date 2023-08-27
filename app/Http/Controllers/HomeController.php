@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $items = Product::orderBy('id', 'desc')->get();
-        $Burgers = Product::orderBy('id', 'desc')->Where('Category','Burger')->take(4)->get();;
+        $Burgers = Product::orderBy('id', 'desc')->Where('Category','Burger')->take(4)->get();
         $Desserts = Product::orderBy('id', 'desc')->Where('Category','Dessert')->take(4)->get();
         $Steaks = Product::orderBy('id', 'desc')->Where('Category','Steak')->take(4)->get();
         $Coffees = Product::orderBy('id', 'desc')->Where('Category','Coffee')->take(4)->get();
