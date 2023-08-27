@@ -425,7 +425,7 @@
                                             <span>{{ $Pizza->Price }}৳</span>
                                         </li>
                                     @endforeach
-                                </ul>
+                            </ul>
                             </div>
                         </div>
                     </div>
