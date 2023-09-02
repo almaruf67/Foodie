@@ -28,7 +28,7 @@
                                 <img alt="pata" class="pata" src="{{ asset('assets/img/pata.png') }}" />
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6">mer_name
                             <div class="title-area-img two">
                                 <img alt="title-area-img" src="https://via.placeholder.com/230x376" />
                             </div>
@@ -40,121 +40,25 @@
     </section>
     <section class="gap">
         <div class="container">
-            <form class="checkout-meta donate-page">
+            <form class="checkout-meta donate-page" action="{{ route('payment') }}" method="post">
+                @csrf
                 <div class="row">
-                    <div class="col-lg-8">
-                        <h3 class="pb-3">Billing details</h3>
+                    <div class="col-lg-12">
+                        <h3 class="pb-3">Input your Billing Information</h3>
                         <div class="col-lg-12">
-                            <input type="text" class="input-text" name="billing_name"
-                                value="{{ auth()->user()->name }}" />
-                            <input type="email" class="input-text" name="billing_email"
-                                value="{{ auth()->user()->email }}" />
+                            <input type="text" class="input-text" name="name" id="customer_name" value="{{ auth()->user()->name }}" />
+                            <input type="email" class="input-text" name="email" id="email" value="{{ auth()->user()->email }}" />
+                            <input type="text" class="input-text" id="phone" name="phone" placeholder="Phone" value="{{ old('phone') }}"/>
+                            <input type="text" class="input-text"  id="address" name="address" value="{{ old('address') }}" placeholder="Address" />
 
-
-
-                            <input type="tel" class="input-text" name="billing_phone" placeholder="Phone" />
-
-                            <input type="text" name="Address" placeholder="Address" />
-                            
                         </div>
-                        
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="cart_totals-checkout"
-                            style="background-image: url({{ asset('assets/img/patron.jpg') }})">
-                            <div class="cart_totals cart-Total">
-                                <h4>Cart Total</h4>
-                                <table class="shop_table_responsive">
-                                    <tbody>
-                                        <tr class="cart-subtotal">
-                                            <th>Subtotal:</th>
-                                            <td>
-                                                <span class="woocommerce-Price-amount">
-                                                    <bdi>
-                                                        <span
-                                                            class="woocommerce-Price-currencySymbol">$</span>{{ session()->get('total') }}
-                                                    </bdi>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr class="Shipping">
-                                            <th>Shipping:</th>
-                                            <td>
-                                                <span class="woocommerce-Price-amount amount">
-                                                    free
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr class="Total">
-                                            <th>Total:</th>
-                                            <td>
-                                                <span class="woocommerce-Price-amount">
-                                                    <bdi> <span>$</span>{{ session()->get('total') }} </bdi>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="checkout-side">
-                                <h3>Payment Method</h3>
-                                <ul>
-                                    <li>
-                                        <input type="radio" id="Bank_Payment" name="Bank_Payment" value="Bank_Payment" />
-                                        <label for="Bank_Payment"> Bank Payment </label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" id="Check_Payment" name="Bank_Payment"
-                                            value="Check_Payment" />
-                                        <label for="Check_Payment"> Check Payment </label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" id="PayPal" name="Bank_Payment" value="Check_Payment" />
-                                        <label for="PayPal"> PayPal </label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" id="Cash on Delivery" name="Bank_Payment"
-                                            value="Check_Payment" />
-                                        <label for="Cash on Delivery"> Cash on Delivery </label>
-                                    </li>
-                                </ul>
-                                <button class="button" id="sslczPayBtn" token="if you have any token validation"
-                                    postdata="your javascript arrays or objects which requires in backend"
-                                    order="If you already have the transaction generated for current order"
-                                    endpoint="{{ url('/pay-via-ajax') }}"> Place Order
-                                </button>
 
-                            </div>
-                        </div>
+                        <button class="button mt-5" id="sslczPayBtn"> Place Order</button>
+                   
                     </div>
                 </div>
             </form>
         </div>
     </section>
-@section('scripts')
-    <script>
-        var obj = {};
-        obj.cus_name = $('#customer_name').val();
-        obj.cus_phone = $('#mobile').val();
-        obj.cus_email = $('#email').val();
-        obj.cus_addr1 = $('#address').val();
-        obj.amount = $('#total_amount').val();
 
-        $('#sslczPayBtn').prop('postdata', obj);
-
-        (function(window, document) {
-            var loader = function() {
-                var script = document.createElement("script"),
-                    tag = document.getElementsByTagName("script")[0];
-                // script.src = "https://seamless-epay.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7); // USE THIS FOR LIVE
-                script.src = "https://sandbox.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(
-                    7); // USE THIS FOR SANDBOX
-                tag.parentNode.insertBefore(script, tag);
-            };
-
-            window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload",
-                loader);
-        })(window, document);
-    </script>
-@endsection
 @endsection

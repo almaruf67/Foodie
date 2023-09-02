@@ -19,6 +19,12 @@ class CartController extends Controller
         return View('Product.cart');
     }
 
+    public function order(Request $request)
+    {
+       $info = $request->all();
+    //    dd($info);
+       return View('Product.payment',compact('info'));
+    }
     /**
      * Show the form for creating a new resource.
      */

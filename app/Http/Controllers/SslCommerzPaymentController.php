@@ -12,26 +12,28 @@ class SslCommerzPaymentController extends Controller
 
     public function payViaAjax(Request $request)
     {
-
+        
         # Here you have to receive all the order data to initate the payment.
         # Lets your oder trnsaction informations are saving in a table called "orders"
         # In orders table order uniq identity is "transaction_id","status" field contain status of the transaction, "amount" is the order amount to be paid and "currency" is for storing Site Currency which will be checked with paid currency.
-        $total = session()->get('total');
+        // $total = session()->get('total');
         $post_data = array();
-        $post_data['total_amount'] = $total; # You cant not pay less than 10
+        $requestdata =(array) json_decode($request->cart_json);
+        $post_data['total_amount'] = $requestdata['total']; # You cant not pay less than 10
         $post_data['currency'] = "BDT";
         $post_data['tran_id'] = uniqid(); // tran_id must be unique
 
+        // dd($requestdata['phone']);
         # CUSTOMER INFORMATION
-        $post_data['cus_name'] =  auth()->user()->name ;
-        $post_data['cus_email'] = auth()->user()->email;
-        $post_data['cus_add1'] = 'Mirpur';
+        $post_data['cus_name'] =  $requestdata['name'];
+        $post_data['cus_email'] = $requestdata['email'];
+        $post_data['cus_add1'] = $requestdata['address'];
         $post_data['cus_add2'] = "";
         $post_data['cus_city'] = "";
         $post_data['cus_state'] = "";
         $post_data['cus_postcode'] = "";
         $post_data['cus_country'] = "Bangladesh";
-        $post_data['cus_phone'] = '8801532565852';
+        $post_data['cus_phone'] = $requestdata['phone'];
         $post_data['cus_fax'] = "";
 
         # SHIPMENT INFORMATION

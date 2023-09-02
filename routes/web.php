@@ -63,7 +63,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:web,admin','auth:web,m
 // });
 
 // SSLCOMMERZ Start
-
+Route::post('/payment', [CartController::class, 'order'])->name("payment");
 Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
 Route::post('/success', [SslCommerzPaymentController::class, 'success']);
 Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);

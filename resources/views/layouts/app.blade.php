@@ -202,7 +202,7 @@
 
                         <a class="font-bold" href="{{ route("viewcart") }}">View Cart</a>
 
-                        <a class="font-bold theme-bg-clr text-white checkout" href="{{ route("checkout", $total) }}">Checkout</a>
+                        <a class="font-bold theme-bg-clr text-white checkout" href="{{ route("checkout") }}">Checkout</a>
 
                       </div>
 
