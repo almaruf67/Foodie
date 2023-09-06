@@ -51,9 +51,6 @@
                         <i class="fas fa-lock mr-2"></i> Change Password
                     </a>
                     <div class="dropdown-divider"></div>
-{{--                    <a href="#" class="dropdown-item text-danger">--}}
-{{--                            <i class="fas fa-sign-out-alt mr-2"></i> Logout--}}
-{{--                    </a>--}}
                     <a class="dropdown-item text-danger" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
