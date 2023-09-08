@@ -5,23 +5,26 @@ namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
+use App\Models\orderproducts;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Auth;
 
 class SslCommerzPaymentController extends Controller
 {
 
     public function payViaAjax(Request $request)
     {
-        
+
         # Here you have to receive all the order data to initate the payment.
         # Lets your oder trnsaction informations are saving in a table called "orders"
         # In orders table order uniq identity is "transaction_id","status" field contain status of the transaction, "amount" is the order amount to be paid and "currency" is for storing Site Currency which will be checked with paid currency.
         // $total = session()->get('total');
         $post_data = array();
-        $requestdata =(array) json_decode($request->cart_json);
+        $requestdata = (array) json_decode($request->cart_json);
         $post_data['total_amount'] = $requestdata['total']; # You cant not pay less than 10
         $post_data['currency'] = "BDT";
         $post_data['tran_id'] = uniqid(); // tran_id must be unique
+        $post_data['order_id'] = uniqid(); // order unique id
 
         // dd($requestdata['phone']);
         # CUSTOMER INFORMATION
@@ -63,6 +66,7 @@ class SslCommerzPaymentController extends Controller
             ->where('transaction_id', $post_data['tran_id'])
             ->updateOrInsert([
                 'name' => $post_data['cus_name'],
+                'user_id' => Auth::id(),
                 'email' => $post_data['cus_email'],
                 'phone' => $post_data['cus_phone'],
                 'amount' => $post_data['total_amount'],
@@ -72,6 +76,17 @@ class SslCommerzPaymentController extends Controller
                 'currency' => $post_data['currency']
             ]);
 
+            $order_info = DB::table('orders')
+            ->where('transaction_id', $post_data['tran_id'])->first();
+        foreach (session('cart') as $id => $details) {
+            $order_data = new orderproducts();
+            
+            $order_data->order_id = $order_info->id;
+            $order_data->product_id = $details['id'];
+            $order_data->quantity = $details['quantity'];
+            $order_data->save();
+        }
+
         $sslc = new SslCommerzNotification();
         # initiate(Transaction Data , false: Redirect to SSLCOMMERZ gateway/ true: Show all the Payement gateway here )
         $payment_options = $sslc->makePayment($post_data, 'checkout', 'json');
@@ -80,7 +95,6 @@ class SslCommerzPaymentController extends Controller
             print_r($payment_options);
             $payment_options = array();
         }
-
     }
 
     public function success(Request $request)
@@ -112,14 +126,10 @@ class SslCommerzPaymentController extends Controller
                 $update_product = DB::table('orders')
                     ->where('transaction_id', $tran_id)
                     ->update(['status' => 'Processing']);
-
-
             }
         }
 
         return View('Product.success');
-
-
     }
 
     public function fail(Request $request)
@@ -140,7 +150,6 @@ class SslCommerzPaymentController extends Controller
         } else {
             echo "Transaction is Invalid";
         }
-
     }
 
     public function cancel(Request $request)
@@ -161,8 +170,6 @@ class SslCommerzPaymentController extends Controller
         } else {
             echo "Transaction is Invalid";
         }
-
-
     }
 
     public function ipn(Request $request)
@@ -207,5 +214,4 @@ class SslCommerzPaymentController extends Controller
             echo "Invalid Data";
         }
     }
-
 }
