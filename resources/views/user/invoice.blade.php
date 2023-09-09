@@ -6,7 +6,7 @@
 @section('admin-template')
     <div class="container">
 
-      <section class="gap" >
+        <section class="gap">
             <div class="container py-5">
                 <div class="row">
                     <div class="col-md-12" id="printableArea">
@@ -17,7 +17,8 @@
                                         <a href="#" class="noble-ui-logo d-block mt-3">Noble<span>UI</span></a>
                                         <p class="fw-bolder mt-1 mb-1"><b>NobleUI Themes</b></p>
                                         <p>108,<br> Great Russell St,<br>London, WC1B 3NA.</p>
-                                        <p class="mt-1 mb-1"><b>Status</b> <span class="btn btn-secondary rounded p-1">{{ $info->status }}</span></p>
+                                        <p class="mt-1 mb-1"><b>Status</b> <span
+                                                class="btn btn-secondary rounded p-1">{{ $info->status }}</span></p>
                                         <h5 class="mt-5 mb-2 text-muted">Invoice to :</h5>
                                         <p>{{ $info->name }},<br> {{ $info->address }}</p>
                                     </div>
@@ -62,7 +63,7 @@
                                                     </tr>
                                                 @endforeach
                                             </tbody>
-    
+
                                         </table>
                                     </div>
                                 </div>
@@ -82,7 +83,8 @@
                                                         </tr>
                                                         <tr>
                                                             <td class="text-bold-800">Total</td>
-                                                            <td class="text-bold-800 text-end"> ৳ {{ $sum + $sum * 0.12 }}</td>
+                                                            <td class="text-bold-800 text-end"> ৳ {{ $sum + $sum * 0.12 }}
+                                                            </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -90,29 +92,30 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid w-100">
-                      <a href="javascript:;" class="btn btn-primary float-end mt-4 ms-2"><i data-feather="send"
-                              class="me-3 icon-md"></i>Send Invoice</a>
-                      <a href="javascript:void(0);" onclick="printPageArea('printableArea')" class="btn btn-outline-primary float-end mt-4"><i
-                              data-feather="printer" class="me-2 icon-md"></i>Print</a>
-                  </div>
+                        <a href="javascript:;" class="btn btn-primary float-end mt-4 ms-2"><i data-feather="send"
+                                class="me-3 icon-md"></i>Send Invoice</a>
+                        <a href="javascript:void(0);" onclick="printPageArea('printableArea')"
+                            class="btn btn-outline-primary float-end mt-4"><i data-feather="printer"
+                                class="me-2 icon-md"></i>Print</a>
+                    </div>
                 </div>
             </div>
-            
+
         </section>
     </div>
 @endsection
 @section('customJs')
-<script>
-  function printPageArea(areaID){
-    var printContent = document.getElementById(areaID).innerHTML;
-    var originalContent = document.body.innerHTML;
-    document.body.innerHTML = printContent;
-    window.print();
-    document.body.innerHTML = originalContent;
-}
-</script>
+    <script>
+        function printPageArea(areaID) {
+            var printContent = document.getElementById(areaID).innerHTML;
+            var originalContent = document.body.innerHTML;
+            document.body.innerHTML = printContent;
+            window.print();
+            document.body.innerHTML = originalContent;
+        }
+    </script>
