@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\OrderController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
@@ -46,6 +47,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:web,admin','auth:web,m
     // Route::get('/admin/home', [UserController::class, 'index'])->name('admin.home');
     Route::resource('/product', FoodController::class);
     Route::resource('/user', UserController::class);
+    Route::get('/orders', [OrderController::class, 'orders'])->name('adminorders');
+    Route::get('/invoice/{id}', [OrderController::class, 'invoice'])->name('admininvoice');
     });
 
 // Route::middleware(['auth', 'user-access:admin'])->group(function () {
