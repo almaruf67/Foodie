@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ config('app.name', 'Foodie') }}</title>
+  @yield('link')
   <link rel="icon" href="{{ asset("assets/img/logo-icon.png") }}">
   <!-- CSS only -->
    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
@@ -80,6 +81,9 @@
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <a class="dropdown-item" href="{{ route('orders') }}">
+                   Orders
+               </a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                      document.getElementById('logout-form').submit();">

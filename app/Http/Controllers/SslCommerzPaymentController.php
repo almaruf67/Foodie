@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use DB;
+use App\Models\Product;
 use Illuminate\Http\Request;
-use App\Library\SslCommerz\SslCommerzNotification;
 use App\Models\orderproducts;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
+use App\Library\SslCommerz\SslCommerzNotification;
 
 class SslCommerzPaymentController extends Controller
 {
@@ -80,10 +81,12 @@ class SslCommerzPaymentController extends Controller
             ->where('transaction_id', $post_data['tran_id'])->first();
         foreach (session('cart') as $id => $details) {
             $order_data = new orderproducts();
-            
+            $prod = Product::Where('id',$details['id'])->first();
+            // dd($$prod->Title);
             $order_data->order_id = $order_info->id;
             $order_data->product_id = $details['id'];
             $order_data->quantity = $details['quantity'];
+            $order_data->product_name = $prod->Title;
             $order_data->save();
         }
 

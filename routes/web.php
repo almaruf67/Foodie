@@ -36,6 +36,8 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::patch('/update-shopping-cart', [CartController::class, 'update'])->name('update_cart');
     Route::delete('/delete-cart-product', [CartController::class, 'deleteProduct'])->name('delete.cart.product');
     Route::get('/cart', [CartController::class, 'index'])->name('viewcart');
+    Route::get('/orders', [HomeController::class, 'orders'])->name('orders');
+    Route::get('/invoice/{id}', [HomeController::class, 'invoice'])->name('invoice');
 
 });
 

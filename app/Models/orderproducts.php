@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class orderproducts extends Model
 {
@@ -11,6 +12,12 @@ class orderproducts extends Model
     protected $fillable = [
         'order_id',
         'product_id',
+        'product_name',
         'quantity',
     ];
+    
+    public function products(){
+        
+        return $this->hasone(Product::class,'id');
+    }
 }

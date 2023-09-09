@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\orderproducts;
 use App\Models\Product;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -48,6 +51,22 @@ class HomeController extends Controller
     {
         return view('Home.about');
     }
+    public function orders()
+    {
+        $orders=DB::table('orders')->where('user_id', Auth()->id())->get();
+        // dd($orders);
+        return view('Home.order',compact('orders'));
+    }
+
+    public function invoice($id)
+    {
+        $info=DB::table('orders')->where('id', $id)->first();
+        $order_details= orderproducts::orderBy('id', 'desc')->where('order_id', $id)->get();
+        // dd($info);
+        return view('Home.invoice',compact('info','order_details'));
+    }
+
+
     public function shop()
     {
         $items = Product::orderBy('id', 'desc')->paginate(3);
