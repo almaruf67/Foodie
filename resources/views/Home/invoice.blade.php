@@ -44,17 +44,19 @@
                             <div class="container-fluid d-flex justify-content-between">
                                 <div class="col-lg-3 ps-0">
                                     <a href="#" class="noble-ui-logo d-block mt-3">Noble<span>UI</span></a>
-                                    <p class="mt-1 mb-1"><b>NobleUI Themes</b></p>
+                                    <p class="fw-bolder mt-1 mb-1"><b>NobleUI Themes</b></p>
                                     <p>108,<br> Great Russell St,<br>London, WC1B 3NA.</p>
+                                    <p class="mt-1 mb-1"><b>Status</b> <span class="btn btn-secondary rounded p-1">{{ $info->status }}</span></p>
                                     <h5 class="mt-5 mb-2 text-muted">Invoice to :</h5>
                                     <p>{{ $info->name }},<br> {{ $info->address }}</p>
                                 </div>
                                 <div class="col-lg-3 pe-0">
                                     <h4 class="fw-bolder text-uppercase text-end mt-4 mb-2">invoice</h4>
-                                    <h6 class="text-end mb-5 pb-4"># INV-{{ $info->id }}</h6>
+                                    <h6 class="text-end mb-5 pb-4">Order #{{ $info->id }}</h6>
                                     <h6 class="mb-0 mt-3 text-end fw-normal mb-2"><span class="text-muted">Invoice Date
                                             :</span> {{ $info->ordered_at }}</h6>
-
+                                    <h5 class="text-uppercase text-end mt-4 mb-2">Transaction:</h5>
+                                    <p class="text-muted text-end">{{ $info->transaction_id }}</p>
                                 </div>
                             </div>
                             <div class="container-fluid mt-5 d-flex justify-content-center w-100">

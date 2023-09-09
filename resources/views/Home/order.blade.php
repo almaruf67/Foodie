@@ -74,9 +74,12 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.cs
                     </tr>
                   </thead>
                   <tbody>
+                    @php
+                      $count = 1;
+                    @endphp
                     @foreach ($orders as $order)
                     <tr>
-                      <td>1</td>
+                      <td>{{ $count++ }}</td>
                       <td>
                         <div
                           class="d-flex align-items-center gap-3 cursor-pointer"
