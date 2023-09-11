@@ -44,28 +44,17 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth:web,admin','auth:web,manager']], function() {
     Route::get('/', [UserController::class, 'index'])->name('admin.home');
-    // Route::get('/admin/home', [UserController::class, 'index'])->name('admin.home');
     Route::resource('/product', FoodController::class);
     Route::resource('/user', UserController::class);
     Route::get('/orders', [OrderController::class, 'orders'])->name('adminorders');
     Route::get('/invoice/{id}', [OrderController::class, 'invoice'])->name('admininvoice');
+    Route::put('/orderupdate', [OrderController::class, 'update'])->name('order.update');
+    Route::get('/delete/{id}', [OrderController::class, 'destroy'])->name('delete.item');
+
     });
 
-// Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
-//     Route::get('/admin', [UserController::class, 'index'])->name('admin.home');
-//     // Route::get('/admin/home', [UserController::class, 'index'])->name('admin.home');
-//     Route::resource('/admin/product', FoodController::class);
-//     Route::resource('/admin/user', UserController::class);
 
-// });
-// Route::middleware(['auth', 'user-access:manager'])->group(function () {
-//     Route::get('/manager', [UserController::class, 'index'])->name('manager.home');
-//     // Route::get('/admin/home', [UserController::class, 'index'])->name('admin.home');
-//     Route::resource('/admin/product', FoodController::class);
-//     Route::resource('/admin/user', UserController::class);
-
-// });
 
 // SSLCOMMERZ Start
 Route::post('/payment', [CartController::class, 'order'])->name("payment");
