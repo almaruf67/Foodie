@@ -17,7 +17,7 @@ class orderproducts extends Model
     ];
     
     public function products(){
-        // dd( $this->hasMany(Product::class,'product_id','id'));
+        
         return $this->hasone(Product::class,'id','product_id');
     }
 }
