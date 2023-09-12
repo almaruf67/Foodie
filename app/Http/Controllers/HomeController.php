@@ -62,7 +62,8 @@ class HomeController extends Controller
     {
         $info=DB::table('orders')->where('id', $id)->first();
         $order_details= orderproducts::orderBy('id', 'desc')->where('order_id', $id)->get();
-        // dd($info);
+        foreach ($order_details as $key => $item)
+        // {dd($item->products);}
         return view('Home.invoice',compact('info','order_details'));
     }
 
