@@ -17,7 +17,7 @@
         <div class="row pt-3">
             <div class="col-12">
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table display" id="sortable-table">
                             <thead>
                                 <th>SL.</th>
                                 <th>Category</th>

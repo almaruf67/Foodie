@@ -12,7 +12,7 @@ class OrderController extends Controller
 {
     public function orders()
     {
-        $orders = DB::table('orders')->orderBy('id', 'desc')->paginate(5);
+        $orders = DB::table('orders')->orderBy('id', 'desc')->get();
         $active = 0;
         // dd($orders);
         return view('user.order', compact('orders', 'active'));

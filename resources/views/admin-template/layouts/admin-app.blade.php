@@ -11,6 +11,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('admin-asset/css/adminlte.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin-asset/css/custom.css')}}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     @yield('link')
 </head>
 <body class="hold-transition sidebar-mini">
@@ -81,6 +82,7 @@
 </div>
 <!-- ./wrapper -->
 <!-- jQuery -->
+{{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
 <script src="{{asset('admin-asset/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{asset('admin-asset/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -88,8 +90,20 @@
 <script src="{{asset('admin-asset/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('admin-asset/js/demo.js')}}"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 
 
+<script>
+    $(document).ready(function() {
+        $('#sortable-table').DataTable({
+        paging: true,        // Enable pagination
+        // pageLength: 100,     // Set the number of rows per page to 100
+        lengthChange: true, // Disable entries per page dropdown
+        searching: true,    // Disable search box
+        // info: false     // Disable table information
+    });
+    });
+</script>
 @yield('customJs')
 
 </body>

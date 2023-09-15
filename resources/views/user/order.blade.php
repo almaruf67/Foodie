@@ -19,8 +19,11 @@
                                 <input class="form-control ps-5" type="text" placeholder="search" />
                             </form>
                         </div>
+                        @php
+                            $count = 1;
+                        @endphp
                         <div class="table-responsive mt-3">
-                            <table class="table align-middle">
+                            <table class="table align-middle display" id="sortable-table">
                                 <thead class="table-secondary">
                                     <tr>
                                         <th>#</th>
@@ -34,9 +37,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @php
-                                        $count = 1;
-                                    @endphp
+
                                     @foreach ($orders as $order)
                                         <tr>
                                             <td>{{ $count++ }}</td>
@@ -59,7 +60,8 @@
                                                         data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                         title="Views"><i class="bi bi-eye-fill"></i></a>
                                                     <!-- Button trigger modal -->
-                                                    <a href="{{ route('editOrder', $order->id) }}"  class="text-warning" data-bs-toggle="tooltip" title="Edit"><i
+                                                    <a href="{{ route('editOrder', $order->id) }}" class="text-warning"
+                                                        data-bs-toggle="tooltip" title="Edit"><i
                                                             class="bi bi-pencil-fill"></i></a>
                                                     <a class="text-danger delete-item" data-bs-toggle="tooltip"
                                                         data-id="{{ $order->id }}" data-bs-placement="bottom"
@@ -75,8 +77,8 @@
                                                             <div class="modal-dialog" role="document">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
-                                                                        <h5 class="modal-title" id="exampleModalLabel">Modal
-                                                                            title</h5>
+                                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                                            Update Order</h5>
                                                                         <button type="button" class="close"
                                                                             data-dismiss="modal" aria-label="Close">
                                                                             <span aria-hidden="true">&times;</span>
@@ -88,8 +90,8 @@
                                                                             action="{{ route('order.update') }}">
                                                                             @csrf
                                                                             @method('PUT')
-                                                                            <input type="int" class="hidden"
-                                                                                name="id" value="{{ $udata->id }}">
+                                                                            <input type="hidden" name="id"
+                                                                                value="{{ $udata->id }}">
 
                                                                             <div class="form-group">
                                                                                 <label for="status">Order Status</label>
@@ -135,6 +137,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            {{-- {{ $orders->links() }} --}}
                         </div>
                     </div>
                 </div>

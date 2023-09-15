@@ -13,13 +13,15 @@
         <div class="row pt-3">
             <div class="col-12">
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table display" id="sortable-table">
                             <thead>
-                                <th>SL.</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Type</th>
-                                <th>Action</th>
+                                <tr>
+                                    <th>SL.</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Type</th>
+                                    <th>Action</th>
+                                </tr>
                             </thead>
                         <tbody>
                         @foreach($Users as $user)
@@ -57,3 +59,5 @@
     </div>
 
 @endsection
+
+
